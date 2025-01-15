@@ -8,7 +8,6 @@ const Layout = ({ children }) => {
                 <title>Ryan Guidry - Portfolio</title>
                 <meta name="description" content="Ryan Guidry's Portfolio" />
                 <link rel="icon" href="/favicon.ico" />
-                <link rel="stylesheet" href="/assets/css/styles.css" />
                 <link 
                     rel="stylesheet" 
                     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" 
