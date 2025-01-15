@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Process Automation Tools | Ryan Guidry</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/project.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-content">
+                <a href="/" class="logo">
+                    <img src="/images/rg-logomark.svg" alt="RG Logo" class="logo-image">
+                    <span class="logo-text">Ryan Guidry</span>
+                </a>
+                <div class="nav-links">
+                    <a href="/#about">About</a>
+                    <a href="/#portfolio">Portfolio</a>
+                    <a href="/#experience">Experience</a>
+                    <a href="/#skills">Skills</a>
+                    <a href="/blog">Blog</a>
+                    <a href="/#contact">Contact</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="project-page">
+        <article>
+            <div class="project-intro">
+                <a href="/#portfolio" class="back-link"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+                <h1>Process Automation Tools</h1>
+                <div class="project-meta">
+                    <span class="project-date">2024</span>
+                    <div class="project-tags">
+                        <span>Python</span>
+                        <span>Automation</span>
+                        <span>Industrial</span>
+                        <span>Data Processing</span>
+                    </div>
+                </div>
+            </div>
+
+            <section class="project-hero">
+                <img src="/images/projects/automation.png" 
+                     alt="Process Automation Tools Screenshot"
+                     class="project-hero-image"
+                     width="1200"
+                     height="675">
+            </section>
+
+            <section class="project-content">
+                <h2>Project Overview</h2>
+                <p>A comprehensive suite of automation tools designed for streamlining industrial processes, including data collection, analysis, and reporting. Built using Python and industry-standard automation frameworks to improve efficiency and reduce manual workload.</p>
+
+                <h2>Key Features</h2>
+                <ul>
+                    <li>Automated data collection from multiple sources</li>
+                    <li>Real-time process monitoring and alerts</li>
+                    <li>Customizable reporting templates</li>
+                    <li>Integration with industrial control systems</li>
+                    <li>Error handling and logging system</li>
+                </ul>
+
+                <h2>Technical Details</h2>
+                <h3>Core Technologies</h3>
+                <ul>
+                    <li>Python for core automation logic</li>
+                    <li>Pandas for data processing</li>
+                    <li>PyAutoGUI for UI automation</li>
+                    <li>Schedule for task scheduling</li>
+                </ul>
+
+                <h3>Integration Features</h3>
+                <ul>
+                    <li>REST API endpoints for data exchange</li>
+                    <li>Database connectivity (SQL, MongoDB)</li>
+                    <li>Industrial protocol support (Modbus, OPC-UA)</li>
+                    <li>Email and notification systems</li>
+                </ul>
+
+                <h2>Development Process</h2>
+                <p>The development followed an agile methodology:</p>
+                <ol>
+                    <li>Process analysis and requirements gathering</li>
+                    <li>Tool architecture design</li>
+                    <li>Core functionality implementation</li>
+                    <li>Integration with existing systems</li>
+                    <li>Testing and deployment</li>
+                    <li>User training and documentation</li>
+                </ol>
+
+                <h2>Results and Impact</h2>
+                <ul>
+                    <li>Reduced manual data entry by 90%</li>
+                    <li>Improved data accuracy to 99.9%</li>
+                    <li>Saved approximately 20 hours per week in manual tasks</li>
+                    <li>Standardized reporting across departments</li>
+                </ul>
+
+                <h2>Key Achievements</h2>
+                <ul>
+                    <li>Successfully automated Windows Server Update Service (WSUS) deployment for 1200 virtual machines</li>
+                    <li>Reduced administrative overhead by an estimated 4500 hours per year</li>
+                    <li>Implemented robust error handling and recovery mechanisms</li>
+                    <li>Created comprehensive documentation and training materials</li>
+                </ul>
+
+                <h2>Future Enhancements</h2>
+                <ul>
+                    <li>AI/ML integration for predictive maintenance</li>
+                    <li>Extended industrial protocol support</li>
+                    <li>Enhanced visualization capabilities</li>
+                    <li>Mobile app integration</li>
+                </ul>
+            </section>
+        </article>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Ryan Guidry. All rights reserved.</p>
+    </footer>
+
+    <script src="/js/main.js"></script>
+</body>
+</html> 

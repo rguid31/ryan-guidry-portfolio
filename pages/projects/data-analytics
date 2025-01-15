@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Analytics Dashboard | Ryan Guidry</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/project.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="nav-content">
+                <a href="/" class="logo">
+                    <img src="/images/rg-logomark.svg" alt="RG Logo" class="logo-image">
+                    <span class="logo-text">Ryan Guidry</span>
+                </a>
+                <div class="nav-links">
+                    <a href="/#about">About</a>
+                    <a href="/#portfolio">Portfolio</a>
+                    <a href="/#experience">Experience</a>
+                    <a href="/#skills">Skills</a>
+                    <a href="/blog">Blog</a>
+                    <a href="/#contact">Contact</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="project-page">
+        <article>
+            <div class="project-intro">
+                <a href="/#portfolio" class="back-link"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+                <h1>Data Analytics Dashboard</h1>
+                <div class="project-meta">
+                    <span class="project-date">2024</span>
+                    <div class="project-tags">
+                        <span>Python</span>
+                        <span>Data Analytics</span>
+                        <span>Visualization</span>
+                        <span>SQL</span>
+                    </div>
+                </div>
+            </div>
+
+            <section class="project-hero">
+                <img src="/images/projects/data-analytics.png" 
+                     alt="Data Analytics Dashboard Screenshot"
+                     class="project-hero-image"
+                     width="1200"
+                     height="675">
+            </section>
+
+            <section class="project-content">
+                <h2>Project Overview</h2>
+                <p>An interactive dashboard for visualizing complex datasets, featuring real-time updates, customizable charts, and automated reporting capabilities. Built with Python, SQL, and modern visualization libraries to provide actionable insights from data.</p>
+
+                <h2>Key Features</h2>
+                <ul>
+                    <li>Real-time data visualization with interactive charts</li>
+                    <li>Customizable dashboard layouts and widgets</li>
+                    <li>Automated report generation and scheduling</li>
+                    <li>Advanced filtering and data manipulation tools</li>
+                    <li>Export capabilities in multiple formats</li>
+                </ul>
+
+                <h2>Technical Details</h2>
+                <h3>Backend Technologies</h3>
+                <ul>
+                    <li>Python with Pandas for data manipulation</li>
+                    <li>SQLAlchemy for database interactions</li>
+                    <li>FastAPI for REST API endpoints</li>
+                    <li>Automated ETL pipelines</li>
+                </ul>
+
+                <h3>Visualization Stack</h3>
+                <ul>
+                    <li>Plotly for interactive charts</li>
+                    <li>Dash for dashboard framework</li>
+                    <li>Custom visualization components</li>
+                    <li>Real-time data updates</li>
+                </ul>
+
+                <h2>Development Process</h2>
+                <p>The development followed a data-driven approach:</p>
+                <ol>
+                    <li>Requirements gathering and data source analysis</li>
+                    <li>Database schema design and optimization</li>
+                    <li>ETL pipeline implementation</li>
+                    <li>Dashboard UI/UX design</li>
+                    <li>Integration testing and performance optimization</li>
+                </ol>
+
+                <h2>Results and Impact</h2>
+                <ul>
+                    <li>Reduced report generation time by 75%</li>
+                    <li>Improved data accessibility across teams</li>
+                    <li>Enhanced decision-making with real-time insights</li>
+                    <li>Automated daily reporting processes</li>
+                </ul>
+
+                <h2>Future Enhancements</h2>
+                <ul>
+                    <li>Machine learning integration for predictive analytics</li>
+                    <li>Advanced data mining capabilities</li>
+                    <li>Enhanced mobile responsiveness</li>
+                    <li>Additional data source integrations</li>
+                </ul>
+            </section>
+        </article>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Ryan Guidry. All rights reserved.</p>
+    </footer>
+
+    <script src="/js/main.js"></script>
+</body>
+</html> 
