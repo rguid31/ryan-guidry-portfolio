@@ -5,6 +5,7 @@ const Layout = ({ children }) => {
     return (
         <>
             <Head>
+                <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="7360c2ad-3731-4b53-b876-48cc4f98b836" type="text/javascript"></script>
                 <title>Ryan Guidry - Portfolio</title>
                 <meta name="description" content="Ryan Guidry's Portfolio" />
                 <link rel="icon" href="/favicon.ico" />
@@ -12,6 +13,14 @@ const Layout = ({ children }) => {
                     rel="stylesheet" 
                     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" 
                 />
+                <script async src="https://www.googletagmanager.com/gtag/js?id=G-3605L7SNLB"></script>
+                <script dangerouslySetInnerHTML={{ __html: `
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){dataLayer.push(arguments);}
+                    gtag('js', new Date());
+
+                    gtag('config', 'G-3605L7SNLB');
+                `}} />
             </Head>
 
             <header>
@@ -41,6 +50,8 @@ const Layout = ({ children }) => {
                         <a href="#home">Home</a> |
                         <a href="#about">About</a> |
                         <a href="#projects">Portfolio</a> |
+                        <a href="#experience">Experience</a> |
+                        <a href="#skills">Skills</a> |
                         <a href="/blog">Blog</a> |
                         <a href="#contact">Contact</a>
                     </div>
@@ -49,6 +60,7 @@ const Layout = ({ children }) => {
                         <a href="https://github.com/rguid31" target="_blank" rel="noopener noreferrer">GitHub</a>
                         <a href="https://linkedin.com/in/rmguidry" target="_blank" rel="noopener noreferrer">LinkedIn</a>
                         <a href="https://www.x.com/ryne_guidry" target="_blank" rel="noopener noreferrer">X</a>
+                        <a href="https://medium.com/@guidry_ryan" target="_blank" rel="noopener noreferrer">Medium</a>
                     </div>
                     
                     <p>&copy; 2024 Ryan Guidry. All Rights Reserved.</p>

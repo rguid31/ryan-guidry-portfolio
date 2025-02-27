@@ -7,8 +7,8 @@ export default function Home() {
     return (
         <Layout>
             <Head>
-                <title>Ryan Guidry - Portfolio</title>
-                <meta name="description" content="Portfolio of Ryan Guidry - Web Developer, Data Science Enthusiast, and Engineering Student" />
+                <title>Ryan Guidry - Portfolio 2025</title>
+                <meta name="description" content="Portfolio of Ryan Guidry - Data Analyst, Engineering, and Web Development" />
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
                 <script async src="https://www.googletagmanager.com/gtag/js?id=G-3605L7SNLB"></script>
@@ -19,8 +19,8 @@ export default function Home() {
                 <section id="home" className="hero">
                     <div className="hero-content">
                         <h1>Ryan Guidry</h1>
-                        <h2 className="tagline">Amateur Web Developer | Data Science Enthusiast | Student of Engineering</h2>
-                        <p className="intro">Experienced in engineering methodologies, data analytics, full stack web development using modern technologies. I transform complex systems into clear, actionable insights.</p>
+                        <h2 className="tagline">Passionate Web Developer | Data Science Explorer | Engineering Innovator</h2>
+                        <p className="intro">Leveraging a unique combination of chemical engineering expertise, data analysis skills, and AI augmentation, I excel at transforming complex data into actionable insights that drive business decisions.</p>
                         
                         <div className="hero-social-links">
                             <a href="https://github.com/rguid31" target="_blank" className="social-link" rel="noopener noreferrer">
@@ -31,6 +31,12 @@ export default function Home() {
                             </a>
                             <a href="https://www.x.com/ryne_guidry" target="_blank" className="social-link" rel="noopener noreferrer">
                                 <i className="fab fa-x-twitter"></i>
+                            </a>
+                            <a href="https://medium.com/@guidry_ryan" target="_blank" className="social-link" rel="noopener noreferrer">
+                                <i className="fab fa-medium"></i>
+                            </a>
+                            <a href="https://unsplash.com/@ryne_guidry" target="_blank" className="social-link" rel="noopener noreferrer">
+                                <i className="fab fa-unsplash"></i>
                             </a>
                         </div>
                         
@@ -46,21 +52,20 @@ export default function Home() {
                         </div>
                         <div className="highlight-item">
                             <h3>Latest Certification</h3>
-                            <p>Google Data Analytics Professional Certificate</p>
+                            <p>Google AI Essentials Certificate</p>
                         </div>
                     </div>
                 </section>
 
                 {/* About section */}
-                <section id="about">
+                <section id="about" className="about-section">
                     <h2>About Me</h2>
                     <div className="about-content">
                         <div className="profile-container">
                             <img src="/images/profile/profile-photo.jpg" 
                                  alt="Ryan Guidry - Engineering Professional and Data Analyst" 
-                                 className="profile-photo"
-                                 width="400"
-                                 height="400" />
+                                 className="profile-photo hero-image"
+                                 loading="lazy" />
                         </div>
                         
                         <div className="about-text">
@@ -68,26 +73,79 @@ export default function Home() {
                             <p>With a strong foundation in analytical thinking and process optimization, I've worked across industries, including artificial intelligence and engineering. My hands-on experience includes enhancing AI models, streamlining operations, and improving data accuracy.</p>
                             <p>I'm currently building my expertise as a certified Google Data Analytics Professional, focusing on visualization, statistical analysis, and data storytelling. I enjoy turning complex data into actionable insights that create real-world impact.</p>
                             <p>Outside of work, I explore emerging technologies like AI and blockchain while constantly learning and growing. Let's connect to see how I can help transform your data into opportunities!</p>
-                            
-                            <div className="skills">
-                                <h3>Skills & Technologies</h3>
-                                <ul>
-                                    <li>Spreadsheets</li>
-                                    <li>Git/GitHub</li>
-                                    <li>SQL</li>
-                                    <li>Data Visualization</li>
-                                    <li>Data Analysis</li>
-                                </ul>
-                            </div>
-                            
-                            <div className="certifications">
-                                <h3>Certifications</h3>
-                                <ul>
-                                    <li>Google Data Analytics Professional</li>
-                                    <li>OSHA Basic Orientation Plus</li>
-                                    <li>TWIC</li>
-                                </ul>
-                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                {/* Skills & Certifications section */}
+                <section id="skills-certifications" className="skills-certifications-section">
+                    <div className="container">
+                        <div className="skills-container">
+                            <h2>Skills & Technologies</h2>
+                            <ul className="skills-list">
+                                <li>
+                                    <i className="fas fa-code" style={{marginRight: '10px', width: '20px'}}></i>
+                                    Python Programming
+                                </li>
+                                <li>
+                                    <i className="fas fa-laptop-code" style={{marginRight: '10px', width: '20px'}}></i>
+                                    Web Development
+                                </li>
+                                <li>
+                                    <i className="fas fa-database" style={{marginRight: '10px', width: '20px'}}></i>
+                                    SQL
+                                </li>
+                                <li>
+                                    <i className="fas fa-file-excel" style={{marginRight: '10px', width: '20px'}}></i>
+                                    Spreadsheets
+                                </li>
+                                <li>
+                                    <i className="fas fa-chart-line" style={{marginRight: '10px', width: '20px'}}></i>
+                                    Data Visualization
+                                </li>
+                                <li>
+                                    <i className="fas fa-chart-bar" style={{marginRight: '10px', width: '20px'}}></i>
+                                    Data Analysis
+                                </li>
+                                <li>
+                                    <i className="fas fa-cogs" style={{marginRight: '10px', width: '20px'}}></i>
+                                    Process Optimization
+                                </li>
+                                <li>
+                                    <i className="fas fa-broom" style={{marginRight: '10px', width: '20px'}}></i>
+                                    Data Cleaning
+                                </li>
+                                <li>
+                                    <i className="fas fa-chart-pie" style={{marginRight: '10px', width: '20px'}}></i>
+                                    Reporting & Dashboards
+                                </li>
+                                <li>
+                                    <i className="fas fa-file-excel" style={{marginRight: '10px', width: '20px'}}></i>
+                                    Excel Advanced Analytics
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div className="certifications-container">
+                            <h2>Certifications</h2>
+                            <ul className="certifications-list">
+                                <li>
+                                    <i className="fas fa-database" style={{marginRight: '10px', width: '20px'}}></i>
+                                    Google AI Essentials
+                                </li>
+                                <li>
+                                    <i className="fas fa-magnifying-glass-chart" style={{marginRight: '10px', width: '20px'}}></i>
+                                    Google Data Analytics Professional
+                                </li>
+                                <li>
+                                    <i className="fas fa-helmet-safety" style={{marginRight: '10px', width: '20px'}}></i>
+                                    OSHA Basic Orientation Plus
+                                </li>
+                                <li>
+                                    <i className="fas fa-id-card" style={{marginRight: '10px', width: '20px'}}></i>
+                                    Transportation Worker Identification Credential (TWIC)
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </section>
@@ -135,6 +193,24 @@ export default function Home() {
                 <section id="education" className="education-section">
                     <h2>Education</h2>
                     
+                    {/* Google AI Essentials Certification */}
+                    <div className="education-item">
+                        <div className="logo-section">
+                            <div className="institution-logo">
+                                <img src="/images/education/google-ai.png" alt="Google AI Essentials Certification" loading="lazy" />
+                            </div>
+                        </div>
+                        <div className="content-section">
+                            <h3 className="education-title">Google AI Essentials Certification</h3>
+                            <p className="institution-info">Coursera</p>
+                            <p className="education-details">Field of Study: Artificial Intelligence</p>
+                            <div className="education-period">
+                                <i className="fas fa-calendar"></i>
+                                <span>February 2025</span>
+                            </div>
+                        </div>
+                    </div>
+
                     {/* Google Data Analytics Certification */}
                     <div className="education-item">
                         <div className="logo-section">
@@ -261,7 +337,7 @@ export default function Home() {
                         </div>
                         <div className="content-section">
                             <div className="content-container">
-                                <h3 className="job-title">Application Engineer</h3>
+                                <h3 className="job-title">Intern, Application Engineer</h3>
                                 <p className="company-info">Emerson Automation Solutions · Jun 2022 - Aug 2022 · Baton Rouge, LA</p>
                                 <ul className="responsibilities">
                                     <li>Designed and implemented a scalable solution to automate Windows Server Update Service (WSUS) deployment.</li>
@@ -286,7 +362,7 @@ export default function Home() {
                         </div>
                         <div className="content-section">
                             <div className="content-container">
-                                <h3 className="job-title">Project Development Engineer</h3>
+                                <h3 className="job-title">Intern, Project Development Engineer</h3>
                                 <p className="company-info">TotalEnergies · Jun 2021 - Aug 2021 · Port Arthur, TX</p>
                                 <ul className="responsibilities">
                                     <li>Lead project team through front-end-loading (FEL) of $1M CapEx project on the condensate splitter unit.</li>
@@ -311,7 +387,7 @@ export default function Home() {
                         </div>
                         <div className="content-section">
                             <div className="content-container">
-                                <h3 className="job-title">Industrial Equipment Sales</h3>
+                                <h3 className="job-title">Intern, Industrial Equipment Sales</h3>
                                 <p className="company-info">DWL Technology · May 2019 - Sep 2019 · Walker, LA</p>
                                 <ul className="responsibilities">
                                     <li>Inventoried and organized surplus industrial parts and laboratory glassware.</li>
@@ -336,7 +412,7 @@ export default function Home() {
                         </div>
                         <div className="content-section">
                             <div className="content-container">
-                                <h3 className="job-title">Oilfield Chemical Sales</h3>
+                                <h3 className="job-title">Intern, Technical Sales Engineer</h3>
                                 <p className="company-info">Nalco Champion · May 2018 - Aug 2018 · Lafayette, LA</p>
                                 <ul className="responsibilities">
                                     <li>Conducted regular surveys of oil field well heads and upstream equipment.</li>
@@ -361,7 +437,7 @@ export default function Home() {
                         </div>
                         <div className="content-section">
                             <div className="content-container">
-                                <h3 className="job-title">Process Engineer</h3>
+                                <h3 className="job-title">Intern, Process Engineer</h3>
                                 <p className="company-info">Cornerstone Chemical Company · Dec 2017 - Jan 2018 · Waggaman, LA</p>
                                 <ul className="responsibilities">
                                     <li>Utilized Pi ProcessBook and Pi Datalink to determine risks of acid over-neutralization.</li>
@@ -387,7 +463,7 @@ export default function Home() {
                         <div className="content-section">
                             <div className="content-container">
                                 <h3 className="job-title">Bartender</h3>
-                                <p className="company-info">New Orleans Original Daquiris · Jun 2017 - Sep 2017 · Baton Rouge, LA</p>
+                                <p className="company-info">New Orleans Original Daiquiris · Jun 2017 - Sep 2017 · Baton Rouge, LA</p>
                                 <ul className="responsibilities">
                                     <li>Developed customer business relations through effective social interaction and assurance of customer satisfaction in a fast-paced environment.</li>
                                     <li>Exhibited time management skills and a strong work ethic through school & work-life balance.</li>
@@ -411,7 +487,7 @@ export default function Home() {
                         </div>
                         <div className="content-section">
                             <div className="content-container">
-                                <h3 className="job-title">Paper Chemical Sales Engineer</h3>
+                                <h3 className="job-title">Intern,Paper Chemical Sales Engineer</h3>
                                 <p className="company-info">Georgia-Pacific · May 2016 - Aug 2016 & Dec 2016 · Saratoga Springs, NY</p>
                                 <ul className="responsibilities">
                                     <li>Conducted wet-end tests throughout the paper making process.</li>
@@ -485,7 +561,7 @@ export default function Home() {
                         </div>
                     </div>
 
-                    <h3 className="section-subheader">Volunteer Experience</h3>
+                    <h2 className="section-header">Volunteer Experience</h2>
 
                     {/* LANDONi Music */}
                     <div className="experience-item">
@@ -496,7 +572,7 @@ export default function Home() {
                         </div>
                         <div className="content-section">
                             <div className="content-container">
-                                <h3 className="job-title">Creative Marketing, Brand, and Website Development Volunteer</h3>
+                                <h3 className="job-title">Creative Marketing & Brand Development Specialist Volunteer</h3>
                                 <p className="company-info">LANDONi Music · Mar 2020 - Present · New Orleans, LA</p>
                                 <ul className="responsibilities">
                                     <li>Designed and launched an interactive media portfolio website that improved the client's brand visibility and drove a 15% increase in web traffic and increased audience engagement by 20%.</li>
@@ -527,9 +603,9 @@ export default function Home() {
                                 <h3 className="job-title">Google Local Guide Level 5 Volunteer &nbsp;
                                     <a href="https://www.google.com/maps/contrib/108376276956248088684/contribute/@35.4378279,-89.2902653,2989923m/data=!3m1!1e3!4m3!8m2!3m1!1e1?entry=ttu&g_ep=EgoyMDI1MDEwMS4wIKXMDSoASAFQAw%3D%3D" 
                                        target="_blank" 
-                                       className="profile-link"
+                                       className="cta-button google-cta"
                                        rel="noopener noreferrer">
-                                        View Contributions <i className="fas fa-external-link-alt"></i>
+                                        View My Contributions <i className="fas fa-external-link-alt"></i>
                                     </a>
                                 </h3>
                                 <p className="company-info">Google Maps · Present · Remote</p>
@@ -546,7 +622,7 @@ export default function Home() {
                         </div>
                     </div>
 
-                    <h3 className="section-subheader">Online Marketplace Presence</h3>
+                    <h2 className="section-header">Online Marketplace Experience</h2>
 
                     {/* eBay */}
                     <div className="experience-item">
@@ -557,14 +633,17 @@ export default function Home() {
                         </div>
                         <div className="content-section">
                             <div className="content-container">
-                                <h3 className="job-title">eBay Top Rated Seller &nbsp;
-                                    <a href="https://www.ebay.com/usr/ryans_rocket_shop" 
-                                       target="_blank" 
-                                       className="profile-link"
-                                       rel="noopener noreferrer">
-                                        Ryans_Rocket_Shop <i className="fas fa-external-link-alt"></i>
-                                    </a>
-                                </h3>
+                                <div className="ebay-header">
+                                    <h3 className="job-title">
+                                        eBay Top Rated Seller
+                                        <a href="https://www.ebay.com/usr/ryans_rocket_shop" 
+                                           target="_blank" 
+                                           rel="noopener noreferrer"
+                                           className="cta-button google-cta">
+                                            Visit My eBay Store <i className="fas fa-external-link-alt"></i>
+                                        </a>
+                                    </h3>
+                                </div>
                                 <p className="company-info">eBay · 2015 - Present</p>
                                 <ul className="responsibilities">
                                     <li>Maintained 100% positive feedback rating with over 332 successful transactions</li>
@@ -591,14 +670,17 @@ export default function Home() {
                         </div>
                         <div className="content-section">
                             <div className="content-container">
-                                <h3 className="job-title">Discogs Verified Seller &nbsp;
-                                    <a href="https://www.discogs.com/user/Rockit_Media" 
-                                       target="_blank" 
-                                       className="profile-link"
-                                       rel="noopener noreferrer">
-                                        Rockit_Media <i className="fas fa-external-link-alt"></i>
-                                    </a>
-                                </h3>
+                                <div className="discogs-header">
+                                    <h3 className="job-title">
+                                        Discogs Verified Seller
+                                        <a href="https://www.discogs.com/user/Rockit_Media" 
+                                           target="_blank" 
+                                           rel="noopener noreferrer"
+                                           className="cta-button google-cta">
+                                            Visit My Discogs Profile <i className="fas fa-external-link-alt"></i>
+                                        </a>
+                                    </h3>
+                                </div>
                                 <p className="company-info">Discogs · 2020 - Present</p>
                                 <ul className="responsibilities">
                                     <li>Specialized in vinyl records and music memorabilia</li>
@@ -621,83 +703,26 @@ export default function Home() {
                 <section id="skills">
                     <h2>Skills & Expertise</h2>
                     <div className="skills-grid">
-                        {/* Engineering Skills */}
-                        <div className="skills-category">
-                            <div className="category-header">
-                                <i className="fas fa-cogs"></i>
-                                <h3>Engineering</h3>
-                            </div>
+                        <div className="skill-card">
+                            <i className="fas fa-code"></i>
+                            <h3>Technical Skills</h3>
                             <ul className="skills-list">
-                                <li>Process Optimization</li>
-                                <li>Project Management</li>
-                                <li>Technical Documentation</li>
-                                <li>Risk Assessment</li>
-                                <li>AutoCAD</li>
-                                <li>P&ID Development</li>
-                                <li>Process Flow Diagrams</li>
-                                <li>Equipment Specification</li>
-                                <li>Safety Protocols</li>
-                                <li>Quality Control</li>
-                            </ul>
-                        </div>
-
-                        {/* Web Development Skills */}
-                        <div className="skills-category">
-                            <div className="category-header">
-                                <i className="fas fa-code"></i>
-                                <h3>Web Development</h3>
-                            </div>
-                            <ul className="skills-list">
-                                <li>HTML5 & CSS3</li>
-                                <li>JavaScript</li>
-                                <li>Node.js</li>
-                                <li>Express.js</li>
-                                <li>Responsive Design</li>
-                                <li>Version Control (Git)</li>
-                                <li>RESTful APIs</li>
-                                <li>Web Performance</li>
-                                <li>UI/UX Design</li>
-                                <li>Frontend Frameworks</li>
-                            </ul>
-                        </div>
-
-                        {/* AI Skills */}
-                        <div className="skills-category">
-                            <div className="category-header">
-                                <i className="fas fa-brain"></i>
-                                <h3>Artificial Intelligence</h3>
-                            </div>
-                            <ul className="skills-list">
-                                <li>AI Model Development</li>
-                                <li>Model Training & Tuning</li>
-                                <li>Training Data Generation</li>
-                                <li>Mathematical Modeling</li>
-                                <li>Data Processing</li>
-                                <li>Model Accuracy Improvement</li>
-                                <li>AI-Driven Analytics</li>
-                                <li>Machine Learning Basics</li>
-                                <li>AI Tools & Frameworks</li>
-                                <li>AI Documentation</li>
-                            </ul>
-                        </div>
-
-                        {/* Data Analytics Skills */}
-                        <div className="skills-category">
-                            <div className="category-header">
-                                <i className="fas fa-chart-line"></i>
-                                <h3>Data Analytics</h3>
-                            </div>
-                            <ul className="skills-list">
-                                <li>Python</li>
+                                <li>Python Programming</li>
+                                <li>Web Development</li>
                                 <li>SQL</li>
+                                <li>RESTful APIs</li>
+                                <li>Machine Learning</li>
+                            </ul>
+                        </div>
+                        <div className="skill-card">
+                            <i className="fas fa-chart-line"></i>
+                            <h3>Data Analytics</h3>
+                            <ul className="skills-list">
                                 <li>Data Visualization</li>
-                                <li>Statistical Analysis</li>
-                                <li>Pandas & NumPy</li>
-                                <li>ETL Processes</li>
-                                <li>Business Intelligence</li>
-                                <li>Data Cleaning</li>
-                                <li>Reporting & Dashboards</li>
-                                <li>Excel Advanced Analytics</li>
+                                <li>Data Analysis</li>
+                                <li>Data Storytelling</li>
+                                <li>Spreadsheets</li>
+                                <li>Process Optimization</li>
                             </ul>
                         </div>
                     </div>
@@ -753,7 +778,9 @@ export default function Home() {
                                 ></textarea>
                             </div>
 
-                            <button type="submit">Send Message</button>
+                            <div className="button-container">
+                                <button type="submit" className="submit-button">Send Message</button>
+                            </div>
                         </form>
 
                         <div id="form-response"></div>
@@ -764,6 +791,30 @@ export default function Home() {
                     </div>
                 </section>
             </main>
+
+            {/* Footer Section */}
+            <footer>
+                <div className="footer-content">
+                    <p>Connect with me:</p>
+                    <div className="footer-social-links">
+                        <a href="https://github.com/rguid31" target="_blank" className="social-link" rel="noopener noreferrer">
+                            <i className="fab fa-github"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/rmguidry" target="_blank" className="social-link" rel="noopener noreferrer">
+                            <i className="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://www.x.com/ryne_guidry" target="_blank" className="social-link" rel="noopener noreferrer">
+                            <i className="fab fa-x-twitter"></i>
+                        </a>
+                        <a href="https://medium.com/@guidry_ryan" target="_blank" className="social-link" rel="noopener noreferrer">
+                            <i className="fab fa-medium"></i>
+                        </a>
+                        <a href="https://unsplash.com/@ryne_guidry" target="_blank" className="social-link" rel="noopener noreferrer">
+                            <i className="fab fa-unsplash"></i>
+                        </a>
+                    </div>
+                </div>
+            </footer>
         </Layout>
     );
 }

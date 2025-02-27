@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@400;500;700&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css');
+
+body {
+    font-family: 'Roboto Flex', sans-serif;
+}
+
 /* Color Variables */
 :root {
     --black: #000000;        /* Pure black for strong contrast */
@@ -37,6 +44,7 @@
     margin-bottom: 1rem;
     font-weight: 700;
     letter-spacing: -0.02em;
+    font-family: 'Roboto Flex', sans-serif;
 }
 
 .hero .tagline {
@@ -44,6 +52,7 @@
     color: var(--text-secondary);
     margin-bottom: 2rem;
     font-weight: 500;
+    font-family: 'Roboto Flex', sans-serif;
 }
 
 .hero .intro {
@@ -122,28 +131,32 @@
     background: var(--bg-white);
 }
 
-.about-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 4rem;
-    align-items: start;
+.about-section {
+    display: flex;
+    align-items: flex-start;
+    padding: 0;
+    margin: 0;
 }
 
 .profile-container {
-    position: sticky;
-    top: 2rem;
+    flex: 1;
+    max-width: 50%;
+    position: relative;
+    padding: 0;
 }
 
-.profile-photo {
+.hero-image {
     width: 100%;
     height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(20, 33, 61, 0.1);
+    border-radius: 0 20px 20px 0;
+    object-fit: cover;
+    display: block;
+    transition: none;
 }
 
 .about-text {
+    flex: 1;
+    padding: 2rem;
     font-size: 1.1rem;
     line-height: 1.6;
     color: var(--text-secondary);
@@ -151,6 +164,7 @@
 
 .about-text p {
     margin-bottom: 1.5rem;
+    font-family: 'Roboto Flex', sans-serif;
 }
 
 .about-text .bio {
@@ -174,6 +188,7 @@
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    font-family: 'Roboto Flex', sans-serif;
 }
 
 .skills h3::before {
@@ -324,9 +339,10 @@
 }
 
 .job-title {
-    color: var(--primary);
-    font-size: 1.25rem;
-    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
 }
 
 .company-info {
@@ -380,44 +396,140 @@
     padding-top: 2rem;
 }
 
-.skills-category {
+.skill-card {
     background: var(--bg-white);
     border-radius: 10px;
     padding: 2rem;
     box-shadow: 0 4px 6px var(--shadow-color);
     border: 1px solid var(--gray);
+    transition: all 0.3s ease;
 }
 
-.category-header {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
+.skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px var(--shadow-color);
+    border-color: var(--secondary);
 }
 
-.category-header i {
-    font-size: 1.5rem;
+.skill-card i {
+    font-size: 2rem;
     color: var(--secondary);
+    margin-bottom: 1rem;
+    display: block;
 }
 
-.category-header h3 {
+.skill-card h3 {
     color: var(--primary);
-    font-size: 1.25rem;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
     font-weight: 600;
 }
 
 .skills-list {
-    list-style-type: none;
+    display: grid;
+    gap: 1rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 .skills-list li {
-    color: var(--text-secondary);
-    padding: 0.5rem 0;
-    border-bottom: 1px solid var(--border-light);
+    padding: 0.8rem 1.2rem;
+    background: var(--gray);
+    color: var(--primary);
+    border-radius: 50px;
+    font-size: 1rem;
+    border: 1px solid var(--primary);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
 }
 
-.skills-list li:last-child {
-    border-bottom: none;
+.skills-list li:hover {
+    background: var(--white);
+    border-color: var(--secondary);
+    transform: translateY(-2px);
+}
+
+.skills-list li i {
+    margin-right: 12px;
+    width: 20px;
+    text-align: center;
+    color: var(--primary);
+}
+
+.skills-list li span {
+    flex-grow: 1;
+}
+
+/* Skill items with animations */
+.skill-item {
+    position: relative;
+    padding: 15px 20px;
+    margin: 10px 0;
+    background: rgba(255,255,255,0.1);
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    animation: slideIn 0.5s ease forwards;
+    opacity: 0;
+}
+
+@keyframes slideIn {
+    from { transform: translateX(20px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+.skill-icon {
+    margin-right: 12px;
+    color: #4a90e2;
+    width: 25px;
+    text-align: center;
+}
+
+.proficiency-dots {
+    display: flex;
+    gap: 5px;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #e0e0e0;
+}
+
+.dot.active { background: #4a90e2; }
+
+.skill-progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    background: #4a90e2;
+    width: var(--progress);
+    transition: width 0.5s ease;
+}
+
+.skill-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.skill-badge, .project-count {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #4a90e2;
+    color: white;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 0.8em;
 }
 
 /* Contact Section */
@@ -466,10 +578,18 @@
     resize: vertical;
 }
 
-button[type="submit"] {
+/* Center the submit button */
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+/* Existing button styles */
+.submit-button {
     background: var(--primary);
     color: var(--white);
-    padding: 1rem 2rem;
+    padding: 12px 40px; /* Larger horizontal padding */
     border: none;
     border-radius: 50px;
     font-size: 1rem;
@@ -477,6 +597,7 @@ button[type="submit"] {
     cursor: pointer;
     transition: all 0.3s ease;
     border: 2px solid var(--primary);
+    width: auto; /* Remove if you want full-width button */
 }
 
 button[type="submit"]:hover {
@@ -548,13 +669,12 @@ section h2::after {
         flex-direction: column;
     }
 
-    .about-content {
-        grid-template-columns: 1fr;
-        gap: 2rem;
+    .about-section {
+        flex-direction: column;
     }
 
     .profile-container {
-        position: static;
+        max-width: 100%;
     }
 
     .experience-item {
@@ -672,4 +792,95 @@ section h2::after {
     .institution-logo {
         margin: 0 auto;
     }
-} 
+}
+
+/* eBay CTA Button */
+.ebay-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.ebay-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px; /* Space between text and icon */
+    padding: 10px 20px; /* Adjust padding for better button size */
+    background: var(--primary); /* Use your primary color */
+    color: white !important; /* Text color */
+    border-radius: 25px; /* Rounded corners */
+    font-weight: 500;
+    transition: all 0.3s ease;
+    text-decoration: none !important; /* Remove underline */
+    margin-top: 20px; /* Space out from the job title */
+}
+
+.ebay-cta:hover {
+    background: var(--secondary);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.ebay-cta i {
+    font-size: 0.9em;
+}
+
+/* Discogs CTA Button */
+.discogs-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.discogs-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px; /* Space between text and icon */
+    padding: 10px 20px; /* Adjust padding for better button size */
+    background: var(--primary); /* Use your primary color */
+    color: white !important; /* Text color */
+    border-radius: 25px; /* Rounded corners */
+    font-weight: 500;
+    transition: all 0.3s ease;
+    text-decoration: none !important; /* Remove underline */
+    margin-top: 20px; /* Space out from the job title */
+}
+
+.discogs-cta:hover {
+    background: var(--white);
+    border-color: var(--secondary);
+    color: var(--secondary) !important;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px var(--shadow-color);
+}
+
+.discogs-cta i {
+    font-size: 0.9em;
+}
+
+/* Google Contributions CTA Button */
+.google-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px; /* Space between text and icon */
+    padding: 10px 20px; /* Adjust padding for better button size */
+    background: var(--primary); /* Use your primary color */
+    color: white !important; /* Text color */
+    border-radius: 25px; /* Rounded corners */
+    font-weight: 500;
+    transition: all 0.3s ease;
+    text-decoration: none !important; /* Remove underline */
+    margin-top: 20px; /* Space out from the job title */
+}
+
+.google-cta:hover {
+    background: var(--secondary); /* Change background on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); /* Shadow effect */
+}
+
+.google-cta i {
+    font-size: 0.9em; /* Icon size */
+}
