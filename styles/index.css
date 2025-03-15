@@ -19,7 +19,6 @@ body {
     --border-light: var(--gray);
     --shadow-color: rgba(20, 33, 61, 0.1);
 }
-
 /* Hero Section */
 .hero {
     min-height: 100vh;
@@ -388,12 +387,12 @@ body {
 }
 
 .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
     max-width: 1200px;
     margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-    padding-top: 2rem;
+    padding: 0 2rem;
 }
 
 .skill-card {
@@ -883,4 +882,17 @@ section h2::after {
 
 .google-cta i {
     font-size: 0.9em; /* Icon size */
+}
+
+/* Make sure it's responsive */
+@media (max-width: 992px) {
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
 }

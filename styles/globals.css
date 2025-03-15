@@ -284,15 +284,14 @@ h2 {
 
 /* About Section */
 #about {
-    padding: 6rem 0;
+    padding: 6rem 5rem;
     background-color: #fff;
 }
 
 .about-content {
-    display: flex;
-    flex-direction: row;
-    gap: 2rem;
-    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
 }
 
 .skills, .certifications {
@@ -1073,4 +1072,257 @@ section h2::after {
 
 .blog-header h1::after {
     background: #FCA311;
+}
+/* F-Pattern Skills Section */
+.skills-section-f-pattern {
+    padding: 6rem 0;
+    background: #f8f9fa;
+}
+
+/* Top horizontal bar - First scan */
+.skills-headline {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1000px;
+    margin: 3rem auto;
+    padding: 0 2rem;
+    border-bottom: 2px solid #e9ecef;
+    padding-bottom: 2rem;
+}
+
+.headline-item {
+    text-align: center;
+}
+
+.skill-number {
+    display: block;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #0070f3;
+    margin-bottom: 0.5rem;
+}
+
+.skill-label {
+    font-size: 1rem;
+    color: #495057;
+}
+
+/* Content container - creates the F-shape */
+.skills-content-container {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Left sidebar - strong vertical element */
+.skills-categories {
+    width: 200px;
+    border-right: 1px solid #e9ecef;
+    padding-right: 1.5rem;
+}
+
+.category-item {
+    display: flex;
+    align-items: center;
+    padding: 1rem 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-left: 3px solid transparent;
+    padding-left: 1rem;
+}
+
+.category-item.active {
+    border-left: 3px solid #0070f3;
+    color: #0070f3;
+    font-weight: 500;
+}
+
+.category-item:hover {
+    background-color: #f1f3f5;
+}
+
+.category-item i {
+    width: 24px;
+    margin-right: 1rem;
+}
+
+/* Main content area - second horizontal scan */
+.skills-main-content {
+    flex: 1;
+    padding-left: 3rem;
+}
+
+.skills-main-content h3 {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+/* Tag cloud for skills */
+.skills-tag-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 3rem;
+}
+
+.skill-tag {
+    background: white;
+    padding: 0.75rem 1.25rem;
+    border-radius: 30px;
+    font-size: 1rem;
+    color: #495057;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+.skill-tag.prominent {
+    background: #e7f5ff;
+    color: #0070f3;
+    font-weight: 500;
+    border: 1px solid #d0ebff;
+}
+
+.skill-level {
+    font-size: 0.75rem;
+    background: white;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    margin-left: 0.5rem;
+    color: #666;
+}
+
+.skill-tag:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Featured skill highlight - completing the F */
+.featured-skill {
+    display: flex;
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    margin-top: 2rem;
+}
+
+.featured-skill-icon {
+    width: 60px;
+    height: 60px;
+    background: #e7f5ff;
+    color: #0070f3;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-right: 1.5rem;
+}
+
+.featured-skill-content h4 {
+    font-size: 1.4rem;
+    margin-bottom: 0.75rem;
+    color: #333;
+}
+
+.featured-skill-content p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .skills-content-container {
+        flex-direction: column;
+    }
+    
+    .skills-categories {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #e9ecef;
+        padding-right: 0;
+        padding-bottom: 1rem;
+        margin-bottom: 2rem;
+        display: flex;
+        overflow-x: auto;
+    }
+    
+    .category-item {
+        border-left: none;
+        border-bottom: 3px solid transparent;
+        padding: 0.75rem 1rem;
+    }
+    
+    .category-item.active {
+        border-left: none;
+        border-bottom: 3px solid #0070f3;
+    }
+    
+    .skills-main-content {
+        padding-left: 0;
+    }
+    
+    .skills-headline {
+        flex-direction: column;
+        gap: 2rem;
+        text-align: center;
+    }
+}
+
+/* Add or update this in your globals.css file */
+#skills {
+    padding: 6rem 0;
+    background: #f8f9fa;
+    margin-bottom: 4rem; /* Add bottom margin to create more space */
+}
+
+/* OR add space to the top of the contact section */
+#contact {
+    padding-top: 6rem; /* Increase the top padding */
+    margin-top: 4rem; /* Add top margin for additional spacing */
+}
+
+@media (max-width: 768px) {
+    #about {
+        padding: 4rem 2rem; /* Less padding on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    #about {
+        padding: 3rem 1.5rem; /* Even less padding on mobile */
+    }
+}
+
+/* Add this to your globals.css file */
+.resume-button-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3rem;
+}
+
+.resume-button {
+    background-color: #F0DB20; /* Using the yellow from your color palette */
+    color: #151203; /* Dark text for contrast */
+    padding: 0.75rem 1.5rem;
+    border-radius: 30px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.resume-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(240, 219, 32, 0.3);
+    background-color: #e6d219; /* Slightly darker on hover */
+}
+
+.resume-button i {
+    font-size: 1rem;
 }

@@ -1,0 +1,233 @@
+.experienceTiles {
+    padding: 3rem 0;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+  }
+  
+  .experienceTiles h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+  }
+  
+  .tilesContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  
+  .expTile {
+    position: relative;
+    background-color: #f8f9fa;
+    border-radius: 12px;
+    padding: 2.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    min-height: 260px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  
+  .expTile:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  .logoContainer {
+    width: 100%;
+    height: 240px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+  
+  .logoContainer img {
+    max-width: 90%;
+    max-height: 200px;
+    object-fit: contain;
+  }
+  
+  .companyName {
+    font-weight: 600;
+    font-size: 1.2rem;
+    text-align: center;
+    margin-top: 1rem;
+  }
+  
+  /* Popup styles */
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 1rem;
+    animation: fadeIn 0.3s ease;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  .popup {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 800px;
+    max-height: 90vh;
+    overflow-y: auto;
+    animation: slideIn 0.3s ease;
+    position: relative;
+  }
+  
+  @keyframes slideIn {
+    from { transform: translateY(30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+  
+  .popupContent {
+    padding: 2.5rem;
+  }
+  
+  .closeButton {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #666;
+    line-height: 1;
+    padding: 0;
+    z-index: 10;
+  }
+  
+  .closeButton:hover {
+    color: #333;
+  }
+  
+  .popupHeader {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    align-items: center;
+  }
+  
+  .popupLogoContainer {
+    flex: 0 0 120px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 1rem;
+  }
+  
+  .popupLogoContainer img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+  
+  .popupTitleContainer {
+    flex: 1;
+  }
+  
+  .popupTitleContainer h3 {
+    margin: 0 0 0.75rem 0;
+    font-size: 1.75rem;
+    color: #333;
+  }
+  
+  .companyInfo {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 0.5rem;
+  }
+  
+  .periodInfo {
+    font-size: 1rem;
+    color: #666;
+  }
+  
+  .popupBody {
+    border-top: 1px solid #eee;
+    padding-top: 1.5rem;
+  }
+  
+  .description {
+    white-space: pre-line;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    color: #444;
+  }
+  
+  .skillsSection h4 {
+    margin: 0 0 1rem 0;
+    font-size: 1.2rem;
+    color: #333;
+  }
+  
+  .skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+  
+  .skillTag {
+    font-size: 0.9rem;
+    background-color: #e9ecef;
+    color: #495057;
+    padding: 0.5rem 0.75rem;
+    border-radius: 4px;
+    display: inline-block;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .tilesContainer {
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+    
+    .popupHeader {
+      flex-direction: column;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+    
+    .popupLogoContainer {
+      width: 100px;
+      height: 100px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .tilesContainer {
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    }
+    
+    .popup {
+      width: 95%;
+    }
+    
+    .popupContent {
+      padding: 1.5rem;
+    }
+  }

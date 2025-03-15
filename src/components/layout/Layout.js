@@ -1,7 +1,16 @@
 import React from 'react';
 import Head from 'next/head';
+import { useRouter } from 'next/router';
+import Link from 'next/link';
 
 const Layout = ({ children }) => {
+    const router = useRouter();
+    
+    const handleNavigation = (e, path) => {
+        e.preventDefault();
+        router.push(path);
+    };
+    
     return (
         <>
             <Head>
@@ -26,17 +35,17 @@ const Layout = ({ children }) => {
             <header>
                 <nav>
                     <div className="nav-content">
-                        <a href="#home" className="logo">
+                        <Link href="/" className="logo">
                             <img src="/assets/logos/rg-logomark.svg" alt="RG Logo" className="logo-image" />
                             <span className="logo-text">Ryan Guidry</span>
-                        </a>
+                        </Link>
                         <div className="nav-links">
-                            <a href="#about">About</a>
-                            <a href="#portfolio">Portfolio</a>
-                            <a href="#experience">Experience</a>
-                            <a href="#skills">Skills</a>
-                            <a href="/blog">Blog</a>
-                            <a href="#contact">Contact</a>
+                            <a href="/#about" onClick={(e) => handleNavigation(e, '/#about')}>About</a>
+                            <a href="/#portfolio" onClick={(e) => handleNavigation(e, '/#portfolio')}>Portfolio</a>
+                            <a href="/#experience" onClick={(e) => handleNavigation(e, '/#experience')}>Experience</a>
+                            <a href="/#skills" onClick={(e) => handleNavigation(e, '/#skills')}>Skills</a>
+                            <Link href="/blog">Blog</Link>
+                            <a href="/#contact" onClick={(e) => handleNavigation(e, '/#contact')}>Contact</a>
                         </div>
                     </div>
                 </nav>
@@ -47,13 +56,11 @@ const Layout = ({ children }) => {
             <footer>
                 <div className="footer-content">
                     <div className="quick-links">
-                        <a href="#home">Home</a> |
-                        <a href="#about">About</a> |
-                        <a href="#projects">Portfolio</a> |
-                        <a href="#experience">Experience</a> |
-                        <a href="#skills">Skills</a> |
-                        <a href="/blog">Blog</a> |
-                        <a href="#contact">Contact</a>
+                        <a href="/#home" onClick={(e) => handleNavigation(e, '/#home')}>Home</a> |
+                        <a href="/#about" onClick={(e) => handleNavigation(e, '/#about')}>About</a> |
+                        <a href="/#portfolio" onClick={(e) => handleNavigation(e, '/#portfolio')}>Portfolio</a> |
+                        <Link href="/blog">Blog</Link> |
+                        <a href="/#contact" onClick={(e) => handleNavigation(e, '/#contact')}>Contact</a>
                     </div>
                     
                     <div className="social-icons">
