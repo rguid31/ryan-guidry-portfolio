@@ -1,5 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
+import Script from 'next/script';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 
@@ -14,23 +15,32 @@ const Layout = ({ children }) => {
     return (
         <>
             <Head>
-                <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="7360c2ad-3731-4b53-b876-48cc4f98b836" type="text/javascript"></script>
                 <title>Ryan Guidry - Portfolio</title>
                 <meta name="description" content="Ryan Guidry's Portfolio" />
                 <link rel="icon" href="/favicon.ico" />
-                <link 
-                    rel="stylesheet" 
-                    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" 
-                />
-                <script async src="https://www.googletagmanager.com/gtag/js?id=G-3605L7SNLB"></script>
-                <script dangerouslySetInnerHTML={{ __html: `
+            </Head>
+            
+            {/* Cookiebot script */}
+            <Script 
+                id="cookiebot"
+                src="https://consent.cookiebot.com/uc.js" 
+                data-cbid="7360c2ad-3731-4b53-b876-48cc4f98b836"
+                strategy="afterInteractive"
+            />
+            
+            {/* Google Analytics */}
+            <Script
+                src="https://www.googletagmanager.com/gtag/js?id=G-3605L7SNLB"
+                strategy="afterInteractive"
+            />
+            <Script id="google-analytics" strategy="afterInteractive">
+                {`
                     window.dataLayer = window.dataLayer || [];
                     function gtag(){dataLayer.push(arguments);}
                     gtag('js', new Date());
-
                     gtag('config', 'G-3605L7SNLB');
-                `}} />
-            </Head>
+                `}
+            </Script>
 
             <header>
                 <nav>

@@ -11,10 +11,8 @@ export default function Home() {
                 <title>Ryan Guidry - Portfolio 2025</title>
                 <meta name="description" content="Portfolio of Ryan Guidry - Data Analyst, Engineering, and Web Development" />
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-                <script async src="https://www.googletagmanager.com/gtag/js?id=G-3605L7SNLB"></script>
             </Head>
-
+            
             <main>
                 {/* Hero section */}
                 <section id="home" className="hero">
@@ -82,75 +80,74 @@ export default function Home() {
                     </div>
                 </section>
 
-                {/* Skills & Certifications section */}
-                <section id="skills-certifications" className="skills-certifications-section">
-                    <div className="container">
-                        <div className="skills-container">
-                            <h2>Skills & Technologies</h2>
-                            <ul className="skills-list">
-                                <li>
-                                    <i className="fas fa-code" style={{marginRight: '10px', width: '20px'}}></i>
-                                    Python Programming
-                                </li>
-                                <li>
-                                    <i className="fas fa-laptop-code" style={{marginRight: '10px', width: '20px'}}></i>
-                                    Web Development
-                                </li>
-                                <li>
-                                    <i className="fas fa-database" style={{marginRight: '10px', width: '20px'}}></i>
-                                    SQL
-                                </li>
-                                <li>
-                                    <i className="fas fa-file-excel" style={{marginRight: '10px', width: '20px'}}></i>
-                                    Spreadsheets
-                                </li>
-                                <li>
-                                    <i className="fas fa-chart-line" style={{marginRight: '10px', width: '20px'}}></i>
-                                    Data Visualization
-                                </li>
-                                <li>
-                                    <i className="fas fa-chart-bar" style={{marginRight: '10px', width: '20px'}}></i>
-                                    Data Analysis
-                                </li>
-                                <li>
-                                    <i className="fas fa-cogs" style={{marginRight: '10px', width: '20px'}}></i>
-                                    Process Optimization
-                                </li>
-                                <li>
-                                    <i className="fas fa-broom" style={{marginRight: '10px', width: '20px'}}></i>
-                                    Data Cleaning
-                                </li>
-                                <li>
-                                    <i className="fas fa-chart-pie" style={{marginRight: '10px', width: '20px'}}></i>
-                                    Reporting & Dashboards
-                                </li>
-                                <li>
-                                    <i className="fas fa-file-excel" style={{marginRight: '10px', width: '20px'}}></i>
-                                    Excel Advanced Analytics
-                                </li>
-                            </ul>
+                {/* Education Journey Section */}
+                <section id="education" className="education-section">
+                    <h2>Education</h2>
+                    <div className="education-timeline">
+                        <div className="education-item">
+                            <div className="education-image-container">
+                                <img src="/images/education/lsu.png" alt="LSU" className="education-image" />
+                            </div>
+                            <div className="education-details">
+                                <div className="education-dot"></div>
+                                <div className="education-date">2014 - 2023</div>
+                                <div className="education-content">
+                                    <h3>Bachelor of Science in Chemical Engineering (Incomplete - 8 credits remaining) </h3>
+                                    <p>Louisiana State University, Baton Rouge, LA</p>
+                                </div>
+                            </div>
                         </div>
                         
-                        <div className="certifications-container">
-                            <h2>Certifications</h2>
-                            <ul className="certifications-list">
-                                <li>
-                                    <i className="fas fa-database" style={{marginRight: '10px', width: '20px'}}></i>
-                                    Google AI Essentials
-                                </li>
-                                <li>
-                                    <i className="fas fa-magnifying-glass-chart" style={{marginRight: '10px', width: '20px'}}></i>
-                                    Google Data Analytics Professional
-                                </li>
-                                <li>
-                                    <i className="fas fa-helmet-safety" style={{marginRight: '10px', width: '20px'}}></i>
-                                    OSHA Basic Orientation Plus
-                                </li>
-                                <li>
-                                    <i className="fas fa-id-card" style={{marginRight: '10px', width: '20px'}}></i>
-                                    Transportation Worker Identification Credential (TWIC)
-                                </li>
-                            </ul>
+                        {/* Add more education items */}
+                    </div>
+                </section>
+
+                {/* Certifications Section */}
+                <section id="certifications" className="certifications-section">
+                    <h2>Certifications</h2>
+                    <div className="certifications-container">
+                        <div className="cert-row">
+                            <div className="certification-item">
+                                <div className="cert-image-container">
+                                    <i className="fas fa-certificate certification-icon"></i>
+                                </div>
+                                <div className="cert-details">
+                                    <h4>Data Analytics Professional Certification</h4>
+                                    <p>Issued by Coursera, created by Google</p>
+                                </div>
+                            </div>
+                            
+                            <div className="certification-item">
+                                <div className="cert-image-container">
+                                    <i className="fas fa-robot certification-icon"></i>
+                                </div>
+                                <div className="cert-details">
+                                    <h4>AI Essentials Certification</h4>
+                                    <p>Issued by Coursera, created by Google</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div className="cert-row reversed">
+                            <div className="certification-item">
+                                <div className="cert-image-container">
+                                    <i className="fas fa-id-card certification-icon"></i>
+                                </div>
+                                <div className="cert-details">
+                                    <h4>Transportation Worker Identification Credential (TSA)</h4>
+                                    <p>Issued by the National Council of Examiners for Engineering and Surveying (NCEES)</p>
+                                </div>
+                            </div>
+                            
+                            <div className="certification-item">
+                                <div className="cert-image-container">
+                                    <i className="fas fa-hard-hat certification-icon"></i>
+                                </div>
+                                <div className="cert-details">
+                                    <h4>Basic Plus Orientation (OSHA)</h4>
+                                    <p>Issued by the Alliance Safety Council (PMI)</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -194,68 +191,6 @@ export default function Home() {
                     </div>
                 </section>
 
-                {/* Education section */}
-                <section id="education" className="education-section">
-                    <h2>Education</h2>
-                    
-                    {/* Google AI Essentials Certification */}
-                    <div className="education-item">
-                        <div className="logo-section">
-                            <div className="institution-logo">
-                                <img src="/images/education/google-ai.png" alt="Google AI Essentials Certification" loading="lazy" />
-                            </div>
-                        </div>
-                        <div className="content-section">
-                            <h3 className="education-title">Google AI Essentials Certification</h3>
-                            <p className="institution-info">Coursera</p>
-                            <p className="education-details">Field of Study: Artificial Intelligence</p>
-                            <div className="education-period">
-                                <i className="fas fa-calendar"></i>
-                                <span>February 2025</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Google Data Analytics Certification */}
-                    <div className="education-item">
-                        <div className="logo-section">
-                            <div className="institution-logo">
-                                <img src="/images/education/gdapc.png" alt="Google Data Analytics Professional Certificate" loading="lazy" />
-                            </div>
-                        </div>
-                        <div className="content-section">
-                            <h3 className="education-title">Google Data Analytics Professional Certification</h3>
-                            <p className="institution-info">Coursera</p>
-                            <p className="education-details">Field of Study: Data Analytics</p>
-                            <div className="education-period">
-                                <i className="fas fa-calendar"></i>
-                                <span>Sep 2024 - Jan 2025</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* LSU Chemical Engineering */}
-                    <div className="education-item">
-                        <div className="logo-section">
-                            <div className="institution-logo">
-                                <img src="/images/education/lsu.png" alt="Louisiana State University logo" loading="lazy" />
-                            </div>
-                        </div>
-                        <div className="content-section">
-                            <h3 className="education-title">Bachelor of Science in Chemical Engineering (Incomplete)</h3>
-                            <p className="institution-info">Louisiana State University (LSU A&M)</p>
-                            <p className="education-details">Field of Study: Chemical Engineering</p>
-                            <div className="education-period">
-                                <i className="fas fa-calendar"></i>
-                                <span>Aug 2014 - Dec 2023</span>
-                            </div>
-                            <div className="education-stats">
-                                <span>131/128 credit hours completed</span>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
                 {/* Experience section */}
                 <section id="experience" className="experience-section">
                     <h2>Professional Experience</h2>
@@ -274,89 +209,120 @@ export default function Home() {
                 <section id="skills">
                     <h2>Skills & Expertise</h2>
                     <div className="skills-grid">
-                        {/* Technical Skills - Exact card as provided */}
-                        <div className="skill-card">
+                        {/* Frontend Technologies */}
+                        <div className="skill-card skill-web">
                             <i className="fas fa-code"></i>
-                            <h3>Technical Skills</h3>
+                            <h3>Frontend</h3>
                             <ul className="skills-list">
-                                <li>Python Programming</li>
-                                <li>Web Development</li>
-                                <li>SQL</li>
-                                <li>RESTful APIs</li>
-                                <li>Machine Learning</li>
+                                <li className="skill-item">HTML5 & CSS3</li>
+                                <li className="skill-item">JavaScript (ES6+)</li>
+                                <li className="skill-item">React.js</li>
+                                <li className="skill-item">Responsive Design</li>
+                                <li className="skill-item">CSS Frameworks</li>
                             </ul>
                         </div>
                         
-                        {/* Web Development/Coding - NEW */}
-                        <div className="skill-card">
-                            <i className="fas fa-laptop-code"></i>
-                            <h3>Web Development</h3>
+                        {/* Backend Technologies */}
+                        <div className="skill-card skill-data">
+                            <i className="fas fa-server"></i>
+                            <h3>Backend</h3>
                             <ul className="skills-list">
-                                <li>JavaScript/React</li>
-                                <li>Next.js Framework</li>
-                                <li>HTML5/CSS3</li>
-                                <li>Responsive Design</li>
-                                <li>API Integration</li>
-                                <li>Git Version Control</li>
-                                <li>Frontend Optimization</li>
+                                <li className="skill-item">Node.js</li>
+                                <li className="skill-item">Express.js</li>
+                                <li className="skill-item">Python</li>
+                                <li className="skill-item">RESTful APIs</li>
+                                <li className="skill-item">Server Architecture</li>
                             </ul>
                         </div>
                         
-                        {/* Data Analytics */}
-                        <div className="skill-card">
-                            <i className="fas fa-chart-line"></i>
-                            <h3>Data Analytics</h3>
+                        {/* Frameworks & Libraries */}
+                        <div className="skill-card skill-technical">
+                            <i className="fas fa-layer-group"></i>
+                            <h3>Frameworks</h3>
                             <ul className="skills-list">
-                                <li>Data Visualization</li>
-                                <li>Data Analysis</li>
-                                <li>Data Storytelling</li>
-                                <li>Spreadsheets</li>
-                                <li>Process Optimization</li>
+                                <li className="skill-item">Next.js</li>
+                                <li className="skill-item">Tailwind CSS</li>
+                                <li className="skill-item">Bootstrap</li>
+                                <li className="skill-item">Material UI</li>
+                                <li className="skill-item">jQuery</li>
                             </ul>
                         </div>
                         
-                        {/* ML/AI - NEW */}
-                        <div className="skill-card">
-                            <i className="fas fa-brain"></i>
-                            <h3>Machine Learning & AI</h3>
+                        {/* Databases */}
+                        <div className="skill-card skill-data">
+                            <i className="fas fa-database"></i>
+                            <h3>Databases</h3>
                             <ul className="skills-list">
-                                <li>AI Model Training</li>
-                                <li>Neural Networks</li>
-                                <li>Data Preprocessing</li>
-                                <li>Model Evaluation</li>
-                                <li>Natural Language Processing</li>
-                                <li>AI Ethics & Responsibility</li>
-                                <li>Predictive Modeling</li>
+                                <li className="skill-item">MongoDB</li>
+                                <li className="skill-item">MySQL</li>
+                                <li className="skill-item">PostgreSQL</li>
+                                <li className="skill-item">Firebase</li>
+                                <li className="skill-item">SQL</li>
                             </ul>
                         </div>
                         
-                        {/* Graphic Design */}
-                        <div className="skill-card">
-                            <i className="fas fa-palette"></i>
-                            <h3>Graphic Design</h3>
+                        {/* Development Tools */}
+                        <div className="skill-card skill-technical">
+                            <i className="fas fa-tools"></i>
+                            <h3>Dev Tools</h3>
                             <ul className="skills-list">
-                                <li>UI/UX Design</li>
-                                <li>Adobe Photoshop</li>
-                                <li>Figma</li>
-                                <li>Typography</li>
-                                <li>Logo Design</li>
-                                <li>Wireframing</li>
-                                <li>Responsive Design</li>
+                                <li className="skill-item">Git & GitHub</li>
+                                <li className="skill-item">VS Code</li>
+                                <li className="skill-item">Chrome DevTools</li>
+                                <li className="skill-item">NPM/Yarn</li>
+                                <li className="skill-item">Webpack</li>
                             </ul>
                         </div>
                         
-                        {/* Engineering */}
-                        <div className="skill-card">
-                            <i className="fas fa-cogs"></i>
-                            <h3>Engineering</h3>
+                        {/* Design & UI/UX */}
+                        <div className="skill-card skill-design">
+                            <i className="fas fa-paint-brush"></i>
+                            <h3>Design & UI/UX</h3>
                             <ul className="skills-list">
-                                <li>Process Engineering</li>
-                                <li>Chemical Engineering</li>
-                                <li>Process Optimization</li>
-                                <li>Project Management</li>
-                                <li>Technical Documentation</li>
-                                <li>Risk Assessment</li>
-                                <li>Equipment Design</li>
+                                <li className="skill-item">Figma</li>
+                                <li className="skill-item">Adobe Photoshop</li>
+                                <li className="skill-item">User Experience</li>
+                                <li className="skill-item">Wireframing</li>
+                                <li className="skill-item">Responsive Layouts</li>
+                            </ul>
+                        </div>
+                        
+                        {/* Deployment & DevOps */}
+                        <div className="skill-card skill-engineering">
+                            <i className="fas fa-rocket"></i>
+                            <h3>Deployment</h3>
+                            <ul className="skills-list">
+                                <li className="skill-item">Vercel</li>
+                                <li className="skill-item">Netlify</li>
+                                <li className="skill-item">Heroku</li>
+                                <li className="skill-item">AWS (Basics)</li>
+                                <li className="skill-item">CI/CD Pipelines</li>
+                            </ul>
+                        </div>
+                        
+                        {/* Testing & QA */}
+                        <div className="skill-card skill-technical">
+                            <i className="fas fa-vial"></i>
+                            <h3>Testing</h3>
+                            <ul className="skills-list">
+                                <li className="skill-item">Jest</li>
+                                <li className="skill-item">React Testing Library</li>
+                                <li className="skill-item">Unit Testing</li>
+                                <li className="skill-item">Integration Testing</li>
+                                <li className="skill-item">Debugging</li>
+                            </ul>
+                        </div>
+                        
+                        {/* Performance & Optimization */}
+                        <div className="skill-card skill-web">
+                            <i className="fas fa-tachometer-alt"></i>
+                            <h3>Performance</h3>
+                            <ul className="skills-list">
+                                <li className="skill-item">Web Vitals</li>
+                                <li className="skill-item">Image Optimization</li>
+                                <li className="skill-item">Lazy Loading</li>
+                                <li className="skill-item">Caching Strategies</li>
+                                <li className="skill-item">SEO Best Practices</li>
                             </ul>
                         </div>
                     </div>
@@ -450,5 +416,5 @@ export default function Home() {
                 </div>
             </footer>
         </Layout>
-    );
+   );
 }

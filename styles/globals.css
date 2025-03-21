@@ -452,6 +452,26 @@ h2 {
     box-shadow: 0 8px 24px rgba(0,0,0,0.1);
 }
 
+.education-image-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+}
+
+.education-image {
+    width: 120px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.education-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
 .logo-section {
     display: flex;
     align-items: center;
@@ -481,10 +501,6 @@ h2 {
     font-size: 1.1rem;
     color: #666;
     font-weight: 500;
-}
-
-.education-details {
-    color: #777;
 }
 
 .education-period {
@@ -606,6 +622,11 @@ h2 {
         grid-template-columns: 1fr;
         gap: 1rem;
         padding: 1.5rem;
+    }
+
+    .education-image-container {
+        margin: 0 auto;
+        padding-bottom: 1rem;
     }
 
     .logo-section, .company-logo {
@@ -1273,26 +1294,217 @@ section h2::after {
 
 /* Add or update this in your globals.css file */
 #skills {
-    padding: 6rem 0;
+    padding: 4rem 0;
     background: #f8f9fa;
-    margin-bottom: 4rem; /* Add bottom margin to create more space */
 }
 
-/* OR add space to the top of the contact section */
-#contact {
-    padding-top: 6rem; /* Increase the top padding */
-    margin-top: 4rem; /* Add top margin for additional spacing */
+#skills h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    color: #333;
 }
 
-@media (max-width: 768px) {
-    #about {
-        padding: 4rem 2rem; /* Less padding on smaller screens */
+#skills h2:after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, #0070f3, #34d399, #8b5cf6);
+    margin: 1rem auto;
+    border-radius: 2px;
+}
+
+#skills h2:before {
+    content: 'Web Development';
+    display: block;
+    font-size: 1.2rem;
+    color: #666;
+    font-weight: normal;
+    margin-bottom: 0.5rem;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 2rem;
+}
+
+.skill-card {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    border: 1px solid #eee;
+    transition: all 0.3s ease;
+    border-top: 4px solid transparent;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 280px;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+.skill-card i {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.skill-card h3 {
+    color: #333;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.skills-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-grow: 1;
+}
+
+.skill-item {
+    padding: 0.5rem 0.75rem;
+    margin-bottom: 0.5rem;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+/* Technical Skills - Blue */
+.skill-technical {
+    border-top-color: #0070f3;
+}
+
+.skill-technical i {
+    color: #0070f3;
+}
+
+.skill-technical:hover {
+    background-color: #f0f7ff;
+}
+
+.skill-technical .skill-item:hover {
+    background: #0070f3;
+    color: white;
+}
+
+/* Web Development - Yellow */
+.skill-web {
+    border-top-color: #F0DB20;
+}
+
+.skill-web i {
+    color: #F0DB20;
+}
+
+.skill-web:hover {
+    background-color: #fffbea;
+}
+
+.skill-web .skill-item:hover {
+    background: #F0DB20;
+    color: #151203;
+}
+
+/* Data Analytics - Green */
+.skill-data {
+    border-top-color: #34d399;
+}
+
+.skill-data i {
+    color: #34d399;
+}
+
+.skill-data:hover {
+    background-color: #ecfdf5;
+}
+
+.skill-data .skill-item:hover {
+    background: #34d399;
+    color: white;
+}
+
+/* Machine Learning & AI - Purple */
+.skill-ai {
+    border-top-color: #8b5cf6;
+}
+
+.skill-ai i {
+    color: #8b5cf6;
+}
+
+.skill-ai:hover {
+    background-color: #f5f3ff;
+}
+
+.skill-ai .skill-item:hover {
+    background: #8b5cf6;
+    color: white;
+}
+
+/* Graphic Design - Pink */
+.skill-design {
+    border-top-color: #ec4899;
+}
+
+.skill-design i {
+    color: #ec4899;
+}
+
+.skill-design:hover {
+    background-color: #fdf2f8;
+}
+
+.skill-design .skill-item:hover {
+    background: #ec4899;
+    color: white;
+}
+
+/* Engineering - Teal */
+.skill-engineering {
+    border-top-color: #14b8a6;
+}
+
+.skill-engineering i {
+    color: #14b8a6;
+}
+
+.skill-engineering:hover {
+    background-color: #f0fdfa;
+}
+
+.skill-engineering .skill-item:hover {
+    background: #14b8a6;
+    color: white;
+}
+
+/* Responsive adjustments for skills grid */
+@media (max-width: 992px) {
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
-@media (max-width: 480px) {
-    #about {
-        padding: 3rem 1.5rem; /* Even less padding on mobile */
+@media (max-width: 768px) {
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .skill-card {
+        margin-bottom: 1.5rem;
     }
 }
 
@@ -1325,4 +1537,194 @@ section h2::after {
 
 .resume-button i {
     font-size: 1rem;
+}
+
+/* Timeline Section Styles */
+.timeline-section {
+  padding: 6rem 0;
+  background: #fff;
+}
+
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 0;
+}
+
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  background-color: #F0DB20;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+}
+
+/* Map Section Styles */
+.map-section {
+  padding: 6rem 0;
+  background: #f8f9fa;
+}
+
+.map-container {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.base-map {
+  width: 100%;
+  height: auto;
+}
+
+/* Photo Gallery Styles */
+.photo-gallery {
+  padding: 6rem 0;
+  background: #fff;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 200px;
+  gap: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Certifications Z-Pattern Section */
+.certifications-section {
+    padding: 6rem 0;
+    background: white;
+}
+
+.certifications-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.cert-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.cert-row.reversed {
+    flex-direction: row-reverse;
+}
+
+.certification-item {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+    border: 1px solid #eee;
+}
+
+.certification-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    border-color: #F0DB20;
+}
+
+.cert-image-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #F0DB20;
+    color: #151203;
+    flex-shrink: 0;
+}
+
+.certification-icon {
+    font-size: 1.5rem;
+}
+
+.cert-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex: 1;
+}
+
+.cert-details h4 {
+    font-size: 1.2rem;
+    color: #333;
+    margin: 0;
+}
+
+.cert-details p {
+    color: #666;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+/* Responsive adjustments for certifications */
+@media (max-width: 768px) {
+    .cert-row, 
+    .cert-row.reversed {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .certification-item {
+        width: 100%;
+    }
+}
+
+/* Skills Section Styling */
+#skills {
+    padding: 4rem 0;
+    background: #f8f9fa;
+}
+
+#skills h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    position: relative;
+    color: #333;
+}
+
+#skills h2:after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, #0070f3, #34d399, #8b5cf6);
+    margin: 1rem auto;
+    border-radius: 2px;
+}
+
+/* Contact section spacing */
+#contact {
+    padding-top: 6rem;
+    margin-top: 4rem;
+}
+
+@media (max-width: 768px) {
+    #about {
+        padding: 4rem 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #about {
+        padding: 3rem 1.5rem;
+    }
 }
