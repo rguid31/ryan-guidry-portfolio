@@ -2,6 +2,8 @@ import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import Layout from '../src/components/layout/Layout';
+import KeywordCloudMap from '../components/KeywordCloudMap';
+import PersonalityDashboard from '../components/PersonalityDashboard';
 
 export default function AboutPage() {
     return (
@@ -42,6 +44,32 @@ export default function AboutPage() {
                         </div>
                     </div>
                 </section>
+
+                {/* Personality Profile */}
+                <section id="personality" className="full-personality-section">
+                    <div className="personality-container">
+                        <h2 className="personality-heading">My Personality Profile</h2>
+                        
+                        <PersonalityDashboard />
+                        
+                        <div className="profile-description">
+                            <h3>Personality Insights</h3>
+                            <p>Based on my Insights Discovery profile, I'm classified as a "Reforming Observer" with dominant blue (64%) and red (60%) energy. This means I combine analytical thinking with task-focused execution to deliver thorough, well-considered solutions.</p>
+                            <p>My analytical blue energy drives my detail-oriented approach and desire for accuracy, while my red energy provides decisiveness and a results-oriented mindset. This combination makes me particularly effective at solving complex problems and implementing practical solutions.</p>
+                            <p>Supporting these primary energies are my yellow attributes (creativity and enthusiasm) and green attributes (supportiveness and relationship-building), which help me communicate effectively and collaborate well with diverse teams.</p>
+                        </div>
+                        
+                        {/* Keyword Cloud Map Integration - Fixed to prevent overlap */}
+                        <div className="keyword-cloud-section">
+                            <h3>My Skills & Traits Cloud Map</h3>
+                            <KeywordCloudMap />
+                            <p className="keyword-cloud-description">This visualization represents the distribution and relationship between my key skills, personality traits, and professional interests based on my Insights Discovery profile assessment.</p>
+                        </div>
+                    </div>
+                </section>
+
+                {/* Added extra spacing div for separation */}
+                <div className="section-separator"></div>
 
                 {/* Professional Philosophy */}
                 <section className="philosophy-section">
@@ -111,44 +139,6 @@ export default function AboutPage() {
                     </div>
                 </section>
 
-                {/* Personality Profile */}
-                <section id="personality" className="full-personality-section">
-                    <div className="personality-container">
-                        <h2 className="personality-heading">My Personality Profile</h2>
-                        
-                        <div className="personality-visualizations">
-                            <div className="visualization-container">
-                                {/* Personality Wheel Image */}
-                                <div className="svg-container">
-                                    <img src="/images/personality/personality-wheel.svg" alt="My Personality Type Wheel" />
-                                </div>
-                                <div className="visualization-caption">
-                                    <h3>Personality Type Distribution</h3>
-                                    <p>My energy distribution shows dominant blue (analytical) and red (decisive) energies, with supportive yellow (enthusiastic) and green (caring) components.</p>
-                                </div>
-                            </div>
-                            
-                            <div className="visualization-container">
-                                {/* Radar Chart Image */}
-                                <div className="svg-container">
-                                    <img src="/images/personality/radar-chart.svg" alt="My Personal Attributes Radar Chart" />
-                                </div>
-                                <div className="visualization-caption">
-                                    <h3>Key Attributes</h3>
-                                    <p>This radar chart illustrates my key personality attributes, showing the balance between analytical thinking, creativity, attention to detail, and interpersonal skills.</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div className="profile-description">
-                            <h3>Personality Insights</h3>
-                            <p>Based on my Insights Discovery profile, I'm classified as a "Reforming Observer" with dominant blue (64%) and red (60%) energy. This means I combine analytical thinking with task-focused execution to deliver thorough, well-considered solutions.</p>
-                            <p>My analytical blue energy drives my detail-oriented approach and desire for accuracy, while my red energy provides decisiveness and a results-oriented mindset. This combination makes me particularly effective at solving complex problems and implementing practical solutions.</p>
-                            <p>Supporting these primary energies are my yellow attributes (creativity and enthusiasm) and green attributes (supportiveness and relationship-building), which help me communicate effectively and collaborate well with diverse teams.</p>
-                        </div>
-                    </div>
-                </section>
-
                 {/* Personal Interests */}
                 <section className="interests-section">
                     <div className="interests-container">
@@ -194,4 +184,4 @@ export default function AboutPage() {
             </main>
         </Layout>
     );
-} 
+}
