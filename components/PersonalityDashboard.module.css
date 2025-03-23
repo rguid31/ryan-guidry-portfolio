@@ -1,0 +1,90 @@
+.personality-dashboard {
+  width: 100%;
+  margin: 0 auto;
+  padding: 1rem 0 2rem;
+}
+
+.personality-visualizations {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 3rem;
+  margin: 2rem 0;
+}
+
+.visualization-container {
+  max-width: 48%;
+  flex: 1 1 500px;
+  margin: 1rem;
+  padding: 0;
+}
+
+.svg-container {
+  max-width: 100%;
+  margin: 0 auto;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: white;
+  padding: 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.svg-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+}
+
+.svg-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.visualization-caption {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.visualization-caption h3 {
+  color: #333;
+  font-size: 1.3rem;
+  margin-bottom: 0.75rem;
+}
+
+.visualization-caption p {
+  color: #555;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 992px) {
+  .visualization-container {
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  .personality-dashboard {
+    padding: 0.5rem 0 1.5rem;
+  }
+  
+  .personality-visualizations {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+  
+  .visualization-container {
+    max-width: 100%;
+    margin: 0.5rem 0;
+  }
+  
+  .svg-container {
+    padding: 20px;
+  }
+  
+  .visualization-caption h3 {
+    font-size: 1.2rem;
+  }
+} 

@@ -3,11 +3,12 @@ import Head from 'next/head';
 import Link from 'next/link';
 import Layout from '../src/components/layout/Layout';
 import KeywordCloudMap from '../components/KeywordCloudMap';
-import PersonalityDashboard from '../components/PersonalityDashboard';
+import PersonalityDashboard from '../src/components/PersonalityDashboard.jsx';
 
 export default function AboutPage() {
     const [activeSection, setActiveSection] = useState('hero');
     const [scrollProgress, setScrollProgress] = useState(0);
+    const [heroOpacity, setHeroOpacity] = useState(1);
     const sectionsRef = useRef([]);
     
     // Handle intersection observer to detect which section is in view
@@ -41,12 +42,18 @@ export default function AboutPage() {
         };
     }, []);
     
-    // Scroll progress indicator
+    // Scroll progress indicator and hero opacity effect
     useEffect(() => {
         const handleScroll = () => {
             const totalHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
             const progress = (window.scrollY / totalHeight) * 100;
             setScrollProgress(progress);
+            
+            // Calculate hero section opacity based on scroll position
+            const scrollTop = window.scrollY;
+            const heroHeight = document.getElementById('hero')?.offsetHeight || 500;
+            const heroOpacityValue = Math.max(1 - scrollTop / (heroHeight * 0.8), 0);
+            setHeroOpacity(heroOpacityValue);
         };
         
         window.addEventListener('scroll', handleScroll);
@@ -56,12 +63,12 @@ export default function AboutPage() {
         };
     }, []);
     
-    // Scroll to section function
+    // Function to scroll to a specific section
     const scrollToSection = (sectionId) => {
         const section = document.getElementById(sectionId);
         if (section) {
             window.scrollTo({
-                top: section.offsetTop - 80,
+                top: section.offsetTop - 70,
                 behavior: 'smooth'
             });
         }
@@ -70,91 +77,107 @@ export default function AboutPage() {
     return (
         <Layout>
             <Head>
-                <title>About Me | Ryan Guidry</title>
-                <meta name="description" content="Learn more about Ryan Guidry - Chemical Engineering background, skills in Data Analysis, Web Development, and technology innovations." />
+                <title>My Profile - Ryan Guidry</title>
+                <meta name="description" content="Learn more about Ryan Guidry - my journey, personality, values, and interests" />
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             </Head>
             
             {/* Scroll Progress Indicator */}
-            <div className="scroll-progress" style={{ width: `${scrollProgress}%` }}></div>
+            <div className="scroll-progress-bar" style={{ width: `${scrollProgress}%` }}></div>
             
-            {/* Page Navigation */}
+            {/* Sidebar Navigation */}
             <div className="about-nav-container">
-                <nav className="about-sidebar">
-                    <ul>
-                        <li className={activeSection === 'hero' ? 'active' : ''}>
-                            <button onClick={() => scrollToSection('hero')}>
-                                <i className="fas fa-user-circle"></i>
-                                <span>About Me</span>
-                            </button>
-                        </li>
-                        <li className={activeSection === 'journey' ? 'active' : ''}>
-                            <button onClick={() => scrollToSection('journey')}>
-                                <i className="fas fa-map-marked-alt"></i>
-                                <span>My Journey</span>
-                            </button>
-                        </li>
-                        <li className={activeSection === 'personality' ? 'active' : ''}>
-                            <button onClick={() => scrollToSection('personality')}>
-                                <i className="fas fa-brain"></i>
-                                <span>Personality</span>
-                            </button>
-                        </li>
-                        <li className={activeSection === 'philosophy' ? 'active' : ''}>
-                            <button onClick={() => scrollToSection('philosophy')}>
-                                <i className="fas fa-lightbulb"></i>
-                                <span>Philosophy</span>
-                            </button>
-                        </li>
-                        <li className={activeSection === 'timeline' ? 'active' : ''}>
-                            <button onClick={() => scrollToSection('timeline')}>
-                                <i className="fas fa-history"></i>
-                                <span>Journey</span>
-                            </button>
-                        </li>
-                        <li className={activeSection === 'interests' ? 'active' : ''}>
-                            <button onClick={() => scrollToSection('interests')}>
-                                <i className="fas fa-heart"></i>
-                                <span>Interests</span>
-                            </button>
-                        </li>
-                        <li className={activeSection === 'contact' ? 'active' : ''}>
-                            <button onClick={() => scrollToSection('contact')}>
-                                <i className="fas fa-envelope"></i>
-                                <span>Contact</span>
-                            </button>
-                        </li>
-                    </ul>
-                </nav>
+                <div className="about-sidebar">
+                    <button 
+                        className={`sidebar-btn ${activeSection === 'hero' ? 'active' : ''}`}
+                        onClick={() => scrollToSection('hero')}
+                    >
+                        <i className="fas fa-user"></i>
+                        <span>My Profile</span>
+                    </button>
+                    <button 
+                        className={`sidebar-btn ${activeSection === 'journey' ? 'active' : ''}`}
+                        onClick={() => scrollToSection('journey')}
+                    >
+                        <i className="fas fa-road"></i>
+                        <span>My Journey</span>
+                    </button>
+                    <button 
+                        className={`sidebar-btn ${activeSection === 'personality' ? 'active' : ''}`}
+                        onClick={() => scrollToSection('personality')}
+                    >
+                        <i className="fas fa-brain"></i>
+                        <span>Personality</span>
+                    </button>
+                    <button 
+                        className={`sidebar-btn ${activeSection === 'philosophy' ? 'active' : ''}`}
+                        onClick={() => scrollToSection('philosophy')}
+                    >
+                        <i className="fas fa-lightbulb"></i>
+                        <span>Philosophy</span>
+                    </button>
+                    <button 
+                        className={`sidebar-btn ${activeSection === 'interests' ? 'active' : ''}`}
+                        onClick={() => scrollToSection('interests')}
+                    >
+                        <i className="fas fa-heart"></i>
+                        <span>Interests</span>
+                    </button>
+                    <button 
+                        className={`sidebar-btn ${activeSection === 'contact' ? 'active' : ''}`}
+                        onClick={() => scrollToSection('contact')}
+                    >
+                        <i className="fas fa-envelope"></i>
+                        <span>Contact</span>
+                    </button>
+                </div>
             </div>
             
-            <main className="about-page-content">
-                {/* About Hero Section */}
+            <div className="about-page-content">
+                {/* Hero Section */}
                 <section id="hero" className="about-hero">
-                    <div className="about-hero-content">
-                        <h1>About Me</h1>
-                        <p className="about-tagline">Chemical Engineer, Data Analyst, Web Developer & Technology Enthusiast</p>
+                    <div style={{ opacity: heroOpacity, transition: 'opacity 0.3s ease' }}>
+                        <h1>My Profile</h1>
+                        <p className="about-intro">Get to know me beyond the resume — my journey, values, and what drives me forward.</p>
+                    </div>
+                    
+                    {/* Scroll Down Indicator */}
+                    <div className="scroll-indicator" style={{ opacity: heroOpacity, transition: 'opacity 0.3s ease' }}>
+                        <span className="text">Scroll to explore</span>
+                        <div className="scroll-arrow">
+                            <i className="fas fa-chevron-down"></i>
+                        </div>
                     </div>
                 </section>
-
-                {/* About Introduction */}
-                <section id="journey" className="about-intro">
-                    <div className="about-intro-grid">
-                        <div className="about-image-container">
-                            <img 
-                                src="/images/profile/profile-photo.jpg" 
-                                alt="Ryan Guidry - Professional Portrait" 
-                                className="about-profile-image"
-                                loading="lazy" 
-                            />
+                
+                {/* Journey Section */}
+                <section id="journey" className="about-journey">
+                    <h2>My Journey</h2>
+                    
+                    <div className="timeline">
+                        <div className="timeline-item">
+                            <div className="timeline-dot"></div>
+                            <div className="timeline-date">2023 - Present</div>
+                            <div className="timeline-content">
+                                <h3>Data Analytics & Web Development Focus</h3>
+                                <p>Completed Google Data Analytics Professional Certification and transitioned into web development and data visualization projects. Building expertise in modern web technologies while applying data analytics principles.</p>
+                            </div>
                         </div>
-                        <div className="about-intro-content">
-                            <h2>My Journey</h2>
-                            <p className="intro-large">Hi, I'm Ryan Guidry, a Chemical Engineering student transitioning into the world of data analysis and web development.</p>
-                            <p>With a strong foundation in analytical thinking and problem-solving from my engineering background, I've developed a passion for using data to uncover insights, solve complex problems, and drive informed decisions.</p>
-                            <p>My professional journey has taken me through various industries, including artificial intelligence and chemical engineering, where I've had the opportunity to apply my analytical skills to real-world challenges.</p>
-                            <p>I'm currently building my expertise as a certified Google Data Analytics Professional, focusing on data visualization, statistical analysis, and data storytelling. I enjoy transforming complex data sets into actionable insights that create meaningful impact.</p>
-                            <Link href="/#contact" className="cta-button">Let's Connect</Link>
+                        <div className="timeline-item">
+                            <div className="timeline-dot"></div>
+                            <div className="timeline-date">2021 - 2023</div>
+                            <div className="timeline-content">
+                                <h3>Chemical Process Engineering</h3>
+                                <p>Worked on optimizing chemical processes and implementing efficiency improvements. Applied engineering principles to solve complex industrial challenges and enhance operational performance.</p>
+                            </div>
+                        </div>
+                        <div className="timeline-item">
+                            <div className="timeline-dot"></div>
+                            <div className="timeline-date">2014 - 2023</div>
+                            <div className="timeline-content">
+                                <h3>Chemical Engineering Education</h3>
+                                <p>Studied Chemical Engineering at Louisiana State University, developing a strong foundation in mathematical modeling, process design, thermodynamics, and scientific problem-solving methodologies.</p>
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -170,9 +193,40 @@ export default function AboutPage() {
                         
                         <div className="profile-description">
                             <h3>Personality Insights</h3>
-                            <p>Based on my Insights Discovery profile, I'm classified as a "Reforming Observer" with dominant blue (64%) and red (60%) energy. This means I combine analytical thinking with task-focused execution to deliver thorough, well-considered solutions.</p>
-                            <p>My analytical blue energy drives my detail-oriented approach and desire for accuracy, while my red energy provides decisiveness and a results-oriented mindset. This combination makes me particularly effective at solving complex problems and implementing practical solutions.</p>
-                            <p>Supporting these primary energies are my yellow attributes (creativity and enthusiasm) and green attributes (supportiveness and relationship-building), which help me communicate effectively and collaborate well with diverse teams.</p>
+                            <div className="personality-insight-container">
+                                <div className="personality-type-overview">
+                                    <p className="personality-highlight">
+                                        I'm classified as a <strong>"Reforming Observer"</strong> with dominant <span className="color-blue">blue (64%)</span> and <span className="color-red">red (60%)</span> energy.
+                                    </p>
+                                    <p>This means I combine analytical thinking with task-focused execution to deliver thorough, well-considered solutions.</p>
+                                </div>
+                                
+                                <div className="energy-breakdown">
+                                    <div className="energy-item blue-energy">
+                                        <h4><i className="fas fa-brain"></i> Blue Energy</h4>
+                                        <p>Drives my detail-oriented approach and desire for accuracy in everything I do.</p>
+                                    </div>
+                                    
+                                    <div className="energy-item red-energy">
+                                        <h4><i className="fas fa-bolt"></i> Red Energy</h4>
+                                        <p>Provides decisiveness and a results-oriented mindset to complete tasks efficiently.</p>
+                                    </div>
+                                    
+                                    <div className="energy-item yellow-energy">
+                                        <h4><i className="fas fa-lightbulb"></i> Yellow Attributes</h4>
+                                        <p>Creativity and enthusiasm that spark innovation and engagement in projects.</p>
+                                    </div>
+                                    
+                                    <div className="energy-item green-energy">
+                                        <h4><i className="fas fa-handshake"></i> Green Attributes</h4>
+                                        <p>Supportiveness and relationship-building that enhance collaboration with diverse teams.</p>
+                                    </div>
+                                </div>
+                                
+                                <p className="personality-conclusion">
+                                    This unique combination makes me particularly effective at solving complex problems and implementing practical solutions while maintaining strong communication across teams.
+                                </p>
+                            </div>
                         </div>
                         
                         {/* Keyword Cloud Map Integration - Fixed to prevent overlap */}
@@ -221,37 +275,6 @@ export default function AboutPage() {
                     </div>
                 </section>
 
-                {/* Professional Timeline */}
-                <section id="timeline" className="timeline-section">
-                    <h2>Professional Journey</h2>
-                    <div className="timeline-container">
-                        <div className="timeline-item">
-                            <div className="timeline-dot"></div>
-                            <div className="timeline-date">2023 - Present</div>
-                            <div className="timeline-content">
-                                <h3>Data Analytics & Web Development Focus</h3>
-                                <p>Completed Google Data Analytics Professional Certification and transitioned into web development and data visualization projects. Building expertise in modern web technologies while applying data analytics principles.</p>
-                            </div>
-                        </div>
-                        <div className="timeline-item">
-                            <div className="timeline-dot"></div>
-                            <div className="timeline-date">2021 - 2023</div>
-                            <div className="timeline-content">
-                                <h3>Chemical Process Engineering</h3>
-                                <p>Worked on optimizing chemical processes and implementing efficiency improvements. Applied engineering principles to solve complex industrial challenges and enhance operational performance.</p>
-                            </div>
-                        </div>
-                        <div className="timeline-item">
-                            <div className="timeline-dot"></div>
-                            <div className="timeline-date">2014 - 2023</div>
-                            <div className="timeline-content">
-                                <h3>Chemical Engineering Education</h3>
-                                <p>Studied Chemical Engineering at Louisiana State University, developing a strong foundation in mathematical modeling, process design, thermodynamics, and scientific problem-solving methodologies.</p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
                 {/* Personal Interests */}
                 <section id="interests" className="interests-section">
                     <div className="interests-container">
@@ -294,7 +317,7 @@ export default function AboutPage() {
                         </div>
                     </div>
                 </section>
-            </main>
+            </div>
         </Layout>
     );
 }

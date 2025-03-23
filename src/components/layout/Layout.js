@@ -62,7 +62,9 @@ const Layout = ({ children }) => {
                 </nav>
             </header>
 
-            <main>{children}</main>
+            <div className="content-wrapper">
+                <main className="main-content">{children}</main>
+            </div>
 
             <footer>
                 <div className="footer-content">

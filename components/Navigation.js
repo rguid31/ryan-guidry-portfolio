@@ -30,7 +30,7 @@ const Navigation = () => {
                     <span className="logo-text">Ryan Guidry</span>
                 </Link>
                 <div className="nav-links">
-                    <a href="/#about" onClick={(e) => handleClick(e, '/#about')}>About Me</a>
+                    <a href="/#about" onClick={(e) => handleClick(e, '/#about')}>My Profile</a>
                     <a href="/#skills-certifications" onClick={(e) => handleClick(e, '/#skills-certifications')}>Skills</a>
                     <a href="/#portfolio" onClick={(e) => handleClick(e, '/#portfolio')}>Portfolio</a>
                     <a href="/blog" onClick={(e) => handleClick(e, '/blog')}>Blog</a>

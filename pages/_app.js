@@ -1,4 +1,3 @@
-import Navigation from '../components/Navigation';
 import '../styles/globals.css'
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
@@ -32,14 +31,8 @@ function MyApp({ Component, pageProps }) {
     };
   }, [router]);
 
-  const handleNavigation = (e, path) => {
-    e.preventDefault();
-    window.location.href = path;
-  };
-
   return (
     <>
-      <Navigation />
       <Component {...pageProps} />
     </>
   )
