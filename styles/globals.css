@@ -1764,20 +1764,20 @@ section h2::after {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 2rem;
+    gap: 3rem;
     margin: 2rem 0;
 }
 
 .visualization-container {
-    max-width: 45%;
-    flex: 1 1 400px;
+    max-width: 48%;
+    flex: 1 1 500px;
     margin: 1rem;
     padding: 0;
 }
 
 @media (max-width: 992px) {
     .visualization-container {
-        max-width: 80%;
+        max-width: 90%;
     }
 }
 
@@ -1788,7 +1788,7 @@ section h2::after {
     border-radius: 8px;
     overflow: hidden;
     background-color: white;
-    padding: 20px;
+    padding: 30px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -1813,6 +1813,35 @@ section h2::after {
     line-height: 1.7;
 }
 
+/* Style for "Learn more" links in About section */
+.about-more-link {
+    display: inline-block;
+    color: #0070f3;
+    font-weight: 500;
+    text-decoration: none;
+    margin-top: 1rem;
+    transition: all 0.3s ease;
+}
+
+.about-more-link i {
+    margin-left: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+.about-more-link:hover {
+    color: #0051a2;
+}
+
+.about-more-link:hover i {
+    transform: translateX(5px);
+}
+
+.profile-description .about-more-link {
+    display: block;
+    text-align: center;
+    margin-top: 0;
+}
+
 @media (max-width: 768px) {
     .visualization-container {
         max-width: 100%;
@@ -1831,5 +1860,568 @@ section h2::after {
     
     .profile-description {
         font-size: 1rem;
+    }
+}
+
+/* ABOUT PAGE SPECIFIC STYLES */
+/* About Hero Section */
+.about-hero {
+    background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
+    padding: 8rem 0 4rem;
+    text-align: center;
+}
+
+.about-hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.about-hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, #333 0%, #0070f3 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: fadeIn 1s ease-out;
+}
+
+.about-tagline {
+    font-size: 1.5rem;
+    color: #666;
+    margin-bottom: 1rem;
+    animation: slideUp 1s ease-out;
+}
+
+/* About Introduction Section */
+.about-intro {
+    padding: 6rem 2rem;
+    background-color: #fff;
+}
+
+.about-intro-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.about-image-container {
+    text-align: center;
+}
+
+.about-profile-image {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease;
+}
+
+.about-intro-content {
+    padding: 0 1rem;
+}
+
+.about-intro-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #333;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.about-intro-content h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #0070f3, #00a2ff);
+    border-radius: 3px;
+}
+
+.intro-large {
+    font-size: 1.4rem;
+    color: #0070f3;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.about-intro-content p {
+    font-size: 1.1rem;
+    color: #444;
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+}
+
+.about-intro-content .cta-button {
+    margin-top: 1rem;
+    display: inline-block;
+}
+
+/* Philosophy Section */
+.philosophy-section {
+    padding: 6rem 2rem;
+    background-color: #f8f9fa;
+}
+
+.philosophy-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.philosophy-container h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #333;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.philosophy-container h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #0070f3, #00a2ff);
+    border-radius: 3px;
+}
+
+.philosophy-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.philosophy-item {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.philosophy-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+}
+
+.philosophy-icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 1.5rem;
+    background: #f0f7ff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.philosophy-icon i {
+    color: #0070f3;
+    font-size: 1.8rem;
+}
+
+.philosophy-item h3 {
+    color: #333;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+.philosophy-item p {
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Timeline Section */
+.timeline-section {
+    padding: 6rem 2rem;
+    background-color: #fff;
+}
+
+.timeline-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #333;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.timeline-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #0070f3, #00a2ff);
+    border-radius: 3px;
+}
+
+.timeline-container {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    padding: 2rem 0;
+}
+
+.timeline-container::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    background-color: #f0f7ff;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+    border-radius: 3px;
+}
+
+.timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+    left: 0;
+    margin-bottom: 3rem;
+}
+
+.timeline-item:nth-child(even) {
+    left: 50%;
+}
+
+.timeline-dot {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: -10px;
+    background-color: #0070f3;
+    border: 4px solid #f0f7ff;
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.timeline-item:nth-child(even) .timeline-dot {
+    left: 20px;
+}
+
+.timeline-date {
+    font-weight: 600;
+    color: #0070f3;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-content {
+    padding: 1.5rem;
+    background-color: white;
+    position: relative;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.timeline-content::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid white;
+    right: -10px;
+    top: 15px;
+}
+
+.timeline-item:nth-child(even) .timeline-content::after {
+    border-left: none;
+    border-right: 10px solid white;
+    right: auto;
+    left: 20px;
+}
+
+.timeline-content h3 {
+    font-size: 1.3rem;
+    color: #333;
+    margin-bottom: 0.75rem;
+}
+
+.timeline-content p {
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Full Personality Section */
+.full-personality-section {
+    padding: 6rem 2rem;
+    background-color: #f8f9fa;
+}
+
+.full-personality-section .personality-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.full-personality-section .personality-heading {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #333;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.full-personality-section .personality-heading::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #4A89DC, #E9573F);
+    border-radius: 3px;
+}
+
+.visualization-caption {
+    text-align: center;
+    margin-top: 1.5rem;
+}
+
+.visualization-caption h3 {
+    color: #333;
+    font-size: 1.3rem;
+    margin-bottom: 0.75rem;
+}
+
+.visualization-caption p {
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.profile-description h3 {
+    text-align: center;
+    color: #333;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Interests Section */
+.interests-section {
+    padding: 6rem 2rem;
+    background-color: #fff;
+}
+
+.interests-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.interests-container h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #333;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.interests-container h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #0070f3, #00a2ff);
+    border-radius: 3px;
+}
+
+.interests-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.interest-item {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+    text-align: center;
+    border-top: 4px solid #0070f3;
+}
+
+.interest-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+}
+
+.interest-item i {
+    font-size: 2.5rem;
+    color: #0070f3;
+    margin-bottom: 1.5rem;
+}
+
+.interest-item h3 {
+    color: #333;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+.interest-item p {
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* CTA Section */
+.about-cta-section {
+    padding: 6rem 2rem;
+    background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
+    text-align: center;
+}
+
+.about-cta-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 3rem;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+}
+
+.about-cta-container h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+.about-cta-container p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.cta-button.secondary {
+    background: #fff;
+    color: #0070f3;
+    border: 2px solid #0070f3;
+}
+
+.cta-button.secondary:hover {
+    background: #f0f7ff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,112,243,0.2);
+}
+
+/* Responsive Styles for About Page */
+@media (max-width: 992px) {
+    .about-intro-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .about-image-container {
+        margin-bottom: 2rem;
+    }
+
+    .about-profile-image {
+        max-width: 300px;
+    }
+
+    .philosophy-content, 
+    .interests-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .timeline-container::after {
+        left: 31px;
+    }
+
+    .timeline-item {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+        left: 0;
+    }
+
+    .timeline-item:nth-child(even) {
+        left: 0;
+    }
+
+    .timeline-dot {
+        left: 20px;
+        right: auto;
+    }
+
+    .timeline-item:nth-child(even) .timeline-dot {
+        left: 20px;
+    }
+
+    .timeline-content::after,
+    .timeline-item:nth-child(even) .timeline-content::after {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .about-tagline {
+        font-size: 1.2rem;
+    }
+
+    .about-intro-content h2,
+    .philosophy-container h2,
+    .timeline-section h2,
+    .full-personality-section .personality-heading,
+    .interests-container h2,
+    .about-cta-container h2 {
+        font-size: 2rem;
+    }
+
+    .intro-large {
+        font-size: 1.2rem;
+    }
+
+    .philosophy-content, 
+    .interests-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .timeline-item {
+        padding-left: 60px;
     }
 }

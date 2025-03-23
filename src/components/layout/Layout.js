@@ -51,6 +51,7 @@ const Layout = ({ children }) => {
                         </Link>
                         <div className="nav-links">
                             <a href="/#about" onClick={(e) => handleNavigation(e, '/#about')}>About</a>
+                            <Link href="/about">About Me</Link>
                             <a href="/#portfolio" onClick={(e) => handleNavigation(e, '/#portfolio')}>Portfolio</a>
                             <a href="/#experience" onClick={(e) => handleNavigation(e, '/#experience')}>Experience</a>
                             <a href="/#skills" onClick={(e) => handleNavigation(e, '/#skills')}>Skills</a>
