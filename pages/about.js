@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import Layout from '../src/components/layout/Layout';
@@ -6,6 +6,67 @@ import KeywordCloudMap from '../components/KeywordCloudMap';
 import PersonalityDashboard from '../components/PersonalityDashboard';
 
 export default function AboutPage() {
+    const [activeSection, setActiveSection] = useState('hero');
+    const [scrollProgress, setScrollProgress] = useState(0);
+    const sectionsRef = useRef([]);
+    
+    // Handle intersection observer to detect which section is in view
+    useEffect(() => {
+        const sections = document.querySelectorAll('section[id]');
+        
+        const observerOptions = {
+            rootMargin: '-20% 0px -80% 0px',
+            threshold: 0
+        };
+        
+        const observerCallback = (entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    setActiveSection(entry.target.id);
+                    entry.target.classList.add('visible');
+                }
+            });
+        };
+        
+        const observer = new IntersectionObserver(observerCallback, observerOptions);
+        
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+        
+        return () => {
+            sections.forEach(section => {
+                observer.unobserve(section);
+            });
+        };
+    }, []);
+    
+    // Scroll progress indicator
+    useEffect(() => {
+        const handleScroll = () => {
+            const totalHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const progress = (window.scrollY / totalHeight) * 100;
+            setScrollProgress(progress);
+        };
+        
+        window.addEventListener('scroll', handleScroll);
+        
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+    
+    // Scroll to section function
+    const scrollToSection = (sectionId) => {
+        const section = document.getElementById(sectionId);
+        if (section) {
+            window.scrollTo({
+                top: section.offsetTop - 80,
+                behavior: 'smooth'
+            });
+        }
+    };
+    
     return (
         <Layout>
             <Head>
@@ -14,9 +75,62 @@ export default function AboutPage() {
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             </Head>
             
-            <main>
+            {/* Scroll Progress Indicator */}
+            <div className="scroll-progress" style={{ width: `${scrollProgress}%` }}></div>
+            
+            {/* Page Navigation */}
+            <div className="about-nav-container">
+                <nav className="about-sidebar">
+                    <ul>
+                        <li className={activeSection === 'hero' ? 'active' : ''}>
+                            <button onClick={() => scrollToSection('hero')}>
+                                <i className="fas fa-user-circle"></i>
+                                <span>About Me</span>
+                            </button>
+                        </li>
+                        <li className={activeSection === 'journey' ? 'active' : ''}>
+                            <button onClick={() => scrollToSection('journey')}>
+                                <i className="fas fa-map-marked-alt"></i>
+                                <span>My Journey</span>
+                            </button>
+                        </li>
+                        <li className={activeSection === 'personality' ? 'active' : ''}>
+                            <button onClick={() => scrollToSection('personality')}>
+                                <i className="fas fa-brain"></i>
+                                <span>Personality</span>
+                            </button>
+                        </li>
+                        <li className={activeSection === 'philosophy' ? 'active' : ''}>
+                            <button onClick={() => scrollToSection('philosophy')}>
+                                <i className="fas fa-lightbulb"></i>
+                                <span>Philosophy</span>
+                            </button>
+                        </li>
+                        <li className={activeSection === 'timeline' ? 'active' : ''}>
+                            <button onClick={() => scrollToSection('timeline')}>
+                                <i className="fas fa-history"></i>
+                                <span>Journey</span>
+                            </button>
+                        </li>
+                        <li className={activeSection === 'interests' ? 'active' : ''}>
+                            <button onClick={() => scrollToSection('interests')}>
+                                <i className="fas fa-heart"></i>
+                                <span>Interests</span>
+                            </button>
+                        </li>
+                        <li className={activeSection === 'contact' ? 'active' : ''}>
+                            <button onClick={() => scrollToSection('contact')}>
+                                <i className="fas fa-envelope"></i>
+                                <span>Contact</span>
+                            </button>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            
+            <main className="about-page-content">
                 {/* About Hero Section */}
-                <section className="about-hero">
+                <section id="hero" className="about-hero">
                     <div className="about-hero-content">
                         <h1>About Me</h1>
                         <p className="about-tagline">Chemical Engineer, Data Analyst, Web Developer & Technology Enthusiast</p>
@@ -24,7 +138,7 @@ export default function AboutPage() {
                 </section>
 
                 {/* About Introduction */}
-                <section className="about-intro">
+                <section id="journey" className="about-intro">
                     <div className="about-intro-grid">
                         <div className="about-image-container">
                             <img 
@@ -50,7 +164,9 @@ export default function AboutPage() {
                     <div className="personality-container">
                         <h2 className="personality-heading">My Personality Profile</h2>
                         
-                        <PersonalityDashboard />
+                        <div className="personality-card">
+                            <PersonalityDashboard />
+                        </div>
                         
                         <div className="profile-description">
                             <h3>Personality Insights</h3>
@@ -68,11 +184,8 @@ export default function AboutPage() {
                     </div>
                 </section>
 
-                {/* Added extra spacing div for separation */}
-                <div className="section-separator"></div>
-
                 {/* Professional Philosophy */}
-                <section className="philosophy-section">
+                <section id="philosophy" className="philosophy-section">
                     <div className="philosophy-container">
                         <h2>Professional Philosophy</h2>
                         <div className="philosophy-content">
@@ -109,7 +222,7 @@ export default function AboutPage() {
                 </section>
 
                 {/* Professional Timeline */}
-                <section className="timeline-section">
+                <section id="timeline" className="timeline-section">
                     <h2>Professional Journey</h2>
                     <div className="timeline-container">
                         <div className="timeline-item">
@@ -140,7 +253,7 @@ export default function AboutPage() {
                 </section>
 
                 {/* Personal Interests */}
-                <section className="interests-section">
+                <section id="interests" className="interests-section">
                     <div className="interests-container">
                         <h2>Beyond Professional Life</h2>
                         <div className="interests-grid">
@@ -169,7 +282,7 @@ export default function AboutPage() {
                 </section>
 
                 {/* Call to Action */}
-                <section className="about-cta-section">
+                <section id="contact" className="about-cta-section">
                     <div className="about-cta-container">
                         <h2>Let's Work Together</h2>
                         <p>Whether you're looking for a data analyst, web developer, or someone to help bridge the gap between technical solutions and business needs, I'm here to collaborate.</p>
