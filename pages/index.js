@@ -78,6 +78,31 @@ export default function Home() {
                             <p>Outside of work, I explore emerging technologies like AI and blockchain while constantly learning and growing. Let's connect to see how I can help transform your data into opportunities!</p>
                         </div>
                     </div>
+                    
+                    {/* Personality Profile */}
+                    <div className="personality-container">
+                        <h3 className="personality-heading">My Personality Profile</h3>
+                        
+                        <div className="personality-visualizations">
+                            <div className="visualization-container">
+                                {/* Personality Wheel Image */}
+                                <div className="svg-container">
+                                    <img src="/images/personality/personality-wheel.svg" alt="My Personality Type Wheel" />
+                                </div>
+                            </div>
+                            
+                            <div className="visualization-container">
+                                {/* Radar Chart Image */}
+                                <div className="svg-container">
+                                    <img src="/images/personality/radar-chart.svg" alt="My Personal Attributes Radar Chart" />
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div className="profile-description">
+                            <p>Based on my Insights Discovery profile, I'm classified as a "Reforming Observer" with dominant blue (64%) and red (60%) energy. This means I combine analytical thinking with task-focused execution to deliver thorough, well-considered solutions.</p>
+                        </div>
+                    </div>
                 </section>
 
                 {/* Education Journey Section */}
@@ -325,29 +350,6 @@ export default function Home() {
                                 <li className="skill-item">SEO Best Practices</li>
                             </ul>
                         </div>
-                    </div>
-                </section>
-
-                {/* Personality Profile Section */}
-                <section id="personality-profile">
-                    <h2>My Personality Profile</h2>
-                    
-                    <div className="visualization-container">
-                        {/* Personality Wheel Image */}
-                        <div className="svg-container">
-                            <img src="/images/personality/personality-wheel.svg" alt="My Personality Type Wheel" />
-                        </div>
-                    </div>
-                    
-                    <div className="visualization-container">
-                        {/* Radar Chart Image */}
-                        <div className="svg-container">
-                            <img src="/images/personality/radar-chart.svg" alt="My Personal Attributes Radar Chart" />
-                        </div>
-                    </div>
-                    
-                    <div className="profile-description">
-                        <p>Based on my Insights Discovery profile, I'm classified as a "Reforming Observer" with dominant blue (64%) and red (60%) energy. This means I combine analytical thinking with task-focused execution to deliver thorough, well-considered solutions.</p>
                     </div>
                 </section>
 
