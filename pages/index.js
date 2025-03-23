@@ -333,16 +333,17 @@ export default function Home() {
                     <h2>My Personality Profile</h2>
                     
                     <div className="visualization-container">
-                        {/* SVG Personality Wheel */}
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
-                            {/* Insert the entire SVG code from the personality wheel artifact */}
-                            {/* This is a placeholder - replace with your actual SVG code */}
-                            <circle cx="250" cy="250" r="200" fill="#f0f0f0" stroke="#ccc" strokeWidth="1"/>
-                            <path d="M250,50 A200,200 0 0,1 450,250" fill="#4A89DC" stroke="none"/>
-                            <path d="M250,50 A200,200 0 0,0 50,250" fill="#E9573F" stroke="none"/>
-                            <circle cx="250" cy="250" r="50" fill="white" stroke="#ccc" strokeWidth="1"/>
-                            <text x="250" y="260" textAnchor="middle" fill="#333" fontWeight="bold">64% Blue</text>
-                        </svg>
+                        {/* Personality Wheel Image */}
+                        <div className="svg-container">
+                            <img src="/images/personality/personality-wheel.svg" alt="My Personality Type Wheel" />
+                        </div>
+                    </div>
+                    
+                    <div className="visualization-container">
+                        {/* Radar Chart Image */}
+                        <div className="svg-container">
+                            <img src="/images/personality/radar-chart.svg" alt="My Personal Attributes Radar Chart" />
+                        </div>
                     </div>
                     
                     <div className="profile-description">

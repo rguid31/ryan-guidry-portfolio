@@ -1756,26 +1756,36 @@ section h2::after {
 }
 
 .visualization-container {
-    max-width: 500px;
-    margin: 30px auto;
+    max-width: 800px;
+    margin: 40px auto;
     padding: 0 20px;
 }
 
-.visualization-container svg {
+.svg-container {
+    max-width: 500px;
+    margin: 30px auto;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: white;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.svg-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+}
+
+.svg-container img {
     width: 100%;
     height: auto;
     display: block;
-    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
-    transition: transform 0.3s ease;
-}
-
-.visualization-container svg:hover {
-    transform: scale(1.02);
 }
 
 .profile-description {
     max-width: 800px;
-    margin: 30px auto;
+    margin: 40px auto;
     padding: 0 20px;
     text-align: center;
     font-size: 1.1rem;
@@ -1785,6 +1795,10 @@ section h2::after {
 
 @media (max-width: 768px) {
     .visualization-container {
+        max-width: 100%;
+    }
+    
+    .svg-container {
         max-width: 350px;
     }
     
