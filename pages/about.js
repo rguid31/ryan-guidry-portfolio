@@ -10,16 +10,16 @@ export default function AboutPage() {
     const [scrollProgress, setScrollProgress] = useState(0);
     const [heroOpacity, setHeroOpacity] = useState(1);
     const sectionsRef = useRef([]);
-    
-    // Handle intersection observer to detect which section is in view
+    const [personalInfo, setPersonalInfo] = useState(null);
+
     useEffect(() => {
         const sections = document.querySelectorAll('section[id]');
-        
+
         const observerOptions = {
             rootMargin: '-20% 0px -80% 0px',
             threshold: 0
         };
-        
+
         const observerCallback = (entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -28,42 +28,37 @@ export default function AboutPage() {
                 }
             });
         };
-        
+
         const observer = new IntersectionObserver(observerCallback, observerOptions);
-        
         sections.forEach(section => {
             observer.observe(section);
         });
-        
+
         return () => {
             sections.forEach(section => {
                 observer.unobserve(section);
             });
         };
     }, []);
-    
-    // Scroll progress indicator and hero opacity effect
+
     useEffect(() => {
         const handleScroll = () => {
             const totalHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
             const progress = (window.scrollY / totalHeight) * 100;
             setScrollProgress(progress);
-            
-            // Calculate hero section opacity based on scroll position
+
             const scrollTop = window.scrollY;
             const heroHeight = document.getElementById('hero')?.offsetHeight || 500;
             const heroOpacityValue = Math.max(1 - scrollTop / (heroHeight * 0.8), 0);
             setHeroOpacity(heroOpacityValue);
         };
-        
+
         window.addEventListener('scroll', handleScroll);
-        
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
     }, []);
-    
-    // Function to scroll to a specific section
+
     const scrollToSection = (sectionId) => {
         const section = document.getElementById(sectionId);
         if (section) {
@@ -73,7 +68,18 @@ export default function AboutPage() {
             });
         }
     };
-    
+
+    useEffect(() => {
+        async function fetchData() {
+            const response = await fetch('/api/profile');
+            const data = await response.json();
+            setPersonalInfo(data.personalInformation);
+        }
+        fetchData();
+    }, []);
+
+    if (!personalInfo) return <p>Loading...</p>;
+
     return (
         <Layout>
             <Head>
@@ -81,79 +87,45 @@ export default function AboutPage() {
                 <meta name="description" content="Learn more about Ryan Guidry - my journey, personality, values, and interests" />
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             </Head>
-            
-            {/* Scroll Progress Indicator */}
+
             <div className="scroll-progress-bar" style={{ width: `${scrollProgress}%` }}></div>
-            
-            {/* Sidebar Navigation */}
+
             <div className="about-nav-container">
                 <div className="about-sidebar">
-                    <button 
-                        className={`sidebar-btn ${activeSection === 'hero' ? 'active' : ''}`}
-                        onClick={() => scrollToSection('hero')}
-                    >
+                    <button className={`sidebar-btn ${activeSection === 'hero' ? 'active' : ''}`} onClick={() => scrollToSection('hero')}>
                         <i className="fas fa-user"></i>
                         <span>My Profile</span>
                     </button>
-                    <button 
-                        className={`sidebar-btn ${activeSection === 'journey' ? 'active' : ''}`}
-                        onClick={() => scrollToSection('journey')}
-                    >
+                    <button className={`sidebar-btn ${activeSection === 'journey' ? 'active' : ''}`} onClick={() => scrollToSection('journey')}>
                         <i className="fas fa-road"></i>
                         <span>My Journey</span>
                     </button>
-                    <button 
-                        className={`sidebar-btn ${activeSection === 'personality' ? 'active' : ''}`}
-                        onClick={() => scrollToSection('personality')}
-                    >
+                    <button className={`sidebar-btn ${activeSection === 'personality' ? 'active' : ''}`} onClick={() => scrollToSection('personality')}>
                         <i className="fas fa-brain"></i>
                         <span>Personality</span>
                     </button>
-                    <button 
-                        className={`sidebar-btn ${activeSection === 'philosophy' ? 'active' : ''}`}
-                        onClick={() => scrollToSection('philosophy')}
-                    >
+                    <button className={`sidebar-btn ${activeSection === 'philosophy' ? 'active' : ''}`} onClick={() => scrollToSection('philosophy')}>
                         <i className="fas fa-lightbulb"></i>
                         <span>Philosophy</span>
                     </button>
-                    <button 
-                        className={`sidebar-btn ${activeSection === 'interests' ? 'active' : ''}`}
-                        onClick={() => scrollToSection('interests')}
-                    >
+                    <button className={`sidebar-btn ${activeSection === 'interests' ? 'active' : ''}`} onClick={() => scrollToSection('interests')}>
                         <i className="fas fa-heart"></i>
                         <span>Interests</span>
                     </button>
-                    <button 
-                        className={`sidebar-btn ${activeSection === 'contact' ? 'active' : ''}`}
-                        onClick={() => scrollToSection('contact')}
-                    >
+                    <button className={`sidebar-btn ${activeSection === 'contact' ? 'active' : ''}`} onClick={() => scrollToSection('contact')}>
                         <i className="fas fa-envelope"></i>
                         <span>Contact</span>
                     </button>
                 </div>
             </div>
-            
+
             <div className="about-page-content">
-                {/* Hero Section */}
-                <section id="hero" className="about-hero">
-                    <div style={{ opacity: heroOpacity, transition: 'opacity 0.3s ease' }}>
-                        <h1>My Profile</h1>
-                        <p className="about-intro">Get to know me beyond the resume — my journey, values, and what drives me forward.</p>
-                    </div>
-                    
-                    {/* Scroll Down Indicator */}
-                    <div className="scroll-indicator" style={{ opacity: heroOpacity, transition: 'opacity 0.3s ease' }}>
-                        <span className="text">Scroll to explore</span>
-                        <div className="scroll-arrow">
-                            <i className="fas fa-chevron-down"></i>
-                        </div>
-                    </div>
+                <section id="hero" className="about-hero" style={{ opacity: heroOpacity, transition: 'opacity 0.3s ease' }}>
+                    <h1>My Profile</h1>
+                    <p className="about-intro">Get to know me beyond the resume — my journey, values, and what drives me forward.</p>
                 </section>
-                
-                {/* Journey Section */}
                 <section id="journey" className="about-journey">
                     <h2>My Journey</h2>
-                    
                     <div className="timeline">
                         <div className="timeline-item">
                             <div className="timeline-dot"></div>
@@ -181,16 +153,12 @@ export default function AboutPage() {
                         </div>
                     </div>
                 </section>
-
-                {/* Personality Profile */}
                 <section id="personality" className="full-personality-section">
                     <div className="personality-container">
                         <h2 className="personality-heading">My Personality Profile</h2>
-                        
                         <div className="personality-card">
                             <PersonalityDashboard />
                         </div>
-                        
                         <div className="profile-description">
                             <h3>Personality Insights</h3>
                             <div className="personality-insight-container">
@@ -200,45 +168,31 @@ export default function AboutPage() {
                                     </p>
                                     <p>This means I combine analytical thinking with task-focused execution to deliver thorough, well-considered solutions.</p>
                                 </div>
-                                
                                 <div className="energy-breakdown">
                                     <div className="energy-item blue-energy">
                                         <h4><i className="fas fa-brain"></i> Blue Energy</h4>
                                         <p>Drives my detail-oriented approach and desire for accuracy in everything I do.</p>
                                     </div>
-                                    
                                     <div className="energy-item red-energy">
                                         <h4><i className="fas fa-bolt"></i> Red Energy</h4>
                                         <p>Provides decisiveness and a results-oriented mindset to complete tasks efficiently.</p>
                                     </div>
-                                    
                                     <div className="energy-item yellow-energy">
                                         <h4><i className="fas fa-lightbulb"></i> Yellow Attributes</h4>
                                         <p>Creativity and enthusiasm that spark innovation and engagement in projects.</p>
                                     </div>
-                                    
                                     <div className="energy-item green-energy">
                                         <h4><i className="fas fa-handshake"></i> Green Attributes</h4>
                                         <p>Supportiveness and relationship-building that enhance collaboration with diverse teams.</p>
                                     </div>
                                 </div>
-                                
                                 <p className="personality-conclusion">
                                     This unique combination makes me particularly effective at solving complex problems and implementing practical solutions while maintaining strong communication across teams.
                                 </p>
                             </div>
                         </div>
-                        
-                        {/* Keyword Cloud Map Integration - Fixed to prevent overlap */}
-                        <div className="keyword-cloud-section">
-                            <h3>My Skills & Traits Cloud Map</h3>
-                            <KeywordCloudMap />
-                            <p className="keyword-cloud-description">This visualization represents the distribution and relationship between my key skills, personality traits, and professional interests based on my Insights Discovery profile assessment.</p>
-                        </div>
                     </div>
                 </section>
-
-                {/* Professional Philosophy */}
                 <section id="philosophy" className="philosophy-section">
                     <div className="philosophy-container">
                         <h2>Professional Philosophy</h2>
@@ -274,8 +228,6 @@ export default function AboutPage() {
                         </div>
                     </div>
                 </section>
-
-                {/* Personal Interests */}
                 <section id="interests" className="interests-section">
                     <div className="interests-container">
                         <h2>Beyond Professional Life</h2>
@@ -303,8 +255,6 @@ export default function AboutPage() {
                         </div>
                     </div>
                 </section>
-
-                {/* Call to Action */}
                 <section id="contact" className="about-cta-section">
                     <div className="about-cta-container">
                         <h2>Let's Work Together</h2>

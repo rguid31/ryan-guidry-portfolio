@@ -1,3 +1,4 @@
+// Moved to src/components/common/KeywordCloudMap.jsx
 import React from 'react';
 import _ from 'lodash';
 import styles from './KeywordCloudMap.module.css'; // We'll create this file next

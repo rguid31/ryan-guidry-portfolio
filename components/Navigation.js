@@ -1,3 +1,4 @@
+// Moved to src/components/common/Navigation.js
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
@@ -41,4 +42,4 @@ const Navigation = () => {
     );
 };
 
-export default Navigation; 
+export default Navigation;

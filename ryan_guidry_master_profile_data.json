@@ -1,0 +1,359 @@
+﻿{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Ryan Guidry Master Profile Schema",
+  "description": "A comprehensive schema for storing Ryan Guidry's professional and personal information.",
+  "type": "object",
+  "properties": {
+    "personalInformation": {
+      "type": "object",
+      "title": "Personal Information",
+      "properties": {
+        "fullName": { "type": "string", "default": "Ryan Michael Guidry" },
+        "location": {
+          "type": "object",
+          "properties": {
+            "city": { "type": "string", "default": "Baton Rouge" },
+            "state": { "type": "string", "default": "Louisiana" },
+            "country": { "type": "string", "default": "United States" }
+          }
+        },
+        "phone": { "type": "string", "default": "+1 (985) 722-7475" },
+        "emailAddresses": {
+          "type": "array",
+          "items": { "type": "string", "format": "email" },
+          "default": ["inquireryan@gmail.com", "rguid31@lsu.edu", "guidry.ryan@yahoo.com"]
+        },
+        "linkedIn": { "type": "string", "format": "url", "default": "http://linkedin.com/in/rmguidry" },
+        "github": { "type": "string", "format": "url", "default": "https://github.com/rguid31" },
+        "primaryPortfolioWebsite": { "type": "string", "format": "url", "default": "https://www.rguidry.dev", "description": "Primary professional portfolio/dev site" },
+        "linkTree": { "type": "string", "format": "url", "default": "https://linktr.ee/ryanguidry" },
+        "otherWebsites": {
+          "type": "array",
+          "title": "Other Websites",
+          "items": {
+            "type": "object",
+            "properties": {
+              "siteName": { "type": "string", "description": "e.g., Personal Blog, ENS Domain, Secondary Portfolio" },
+              "url": { "type": "string", "format": "url" }
+            },
+            "required": ["siteName", "url"]
+          },
+          "default": [
+            { "siteName": "Personal Website/Portfolio", "url": "https://rmguidry.com" },
+            { "siteName": "ENS Domain", "url": "http://ryanguidry.eth/" }
+          ]
+        },
+        "socialMediaProfiles": {
+          "type": "array",
+          "title": "Social Media Profiles",
+          "items": {
+            "type": "object",
+            "properties": {
+              "platformName": { "type": "string" },
+              "username": { "type": "string", "nullable": true },
+              "url": { "type": "string", "format": "url" }
+            },
+            "required": ["platformName", "url"]
+          },
+          "default": [
+            { "platformName": "X (Twitter)", "username": "@ryne_guidry", "url": "https://twitter.com/ryne_guidry" },
+            { "platformName": "Facebook", "username": "ryanmguidry14", "url": "https://www.facebook.com/ryanmguidry14/" },
+            { "platformName": "SoundCloud", "username": "@LilRedRiddmHood", "url": "https://soundcloud.com/LilRedRiddmHood" },
+            { "platformName": "YouTube", "username": "@ryanguidry14", "url": "https://www.youtube.com/@ryanguidry14" },
+            { "platformName": "Instagram", "username": "@ryne_guidry", "url": "https://www.instagram.com/ryne_guidry" },
+            { "platformName": "Behance", "username": "ryanguidry1", "url": "https://www.behance.net/ryanguidry1" },
+            { "platformName": "Unsplash", "username": "@ryne_guidry", "url": "https://unsplash.com/@ryne_guidry" }
+          ]
+        },
+        "salesPlatforms": {
+          "type": "array",
+          "title": "Sales Platforms",
+          "items": {
+            "type": "object",
+            "properties": {
+              "platformName": { "type": "string" },
+              "storeNameOrUser": { "type": "string" },
+              "url": { "type": "string", "format": "url" }
+            },
+            "required": ["platformName", "storeNameOrUser", "url"]
+          },
+          "default": [
+            { "platformName": "Discogs", "storeNameOrUser": "Rockit_Media", "url": "https://www.discogs.com/user/Rockit_Media" },
+            { "platformName": "eBay", "storeNameOrUser": "ryans_rocket_shop", "url": "https://www.ebay.com/usr/ryans_rocket_shop" }
+          ]
+        }
+      },
+      "required": ["fullName", "location", "phone", "emailAddresses", "linkedIn", "primaryPortfolioWebsite"]
+    },
+    "professionalSummaryMaster": {
+      "type": "string",
+      "title": "Master Professional Summary",
+      "description": "A comprehensive summary that can be tailored for specific roles.",
+      "default": "A highly analytical, methodical, and results-oriented professional leveraging a unique combination of chemical engineering expertise, advanced data analysis skills, AI augmentation capabilities, and hands-on IT/software support experience. A \"Reforming Observer\" (Insights Discovery: High Cool Blue & Fiery Red) adept at transforming complex data into actionable insights, optimizing systems, and providing meticulous technical solutions. Proven ability to master new technologies rapidly, manage and configure software systems (including MS Server environments, SQL, WSUS), and provide clear, fact-based user support. Eager to apply a robust skill set encompassing problem-solving, process optimization, programming principles, and project coordination to drive impactful business decisions and operational excellence."
+    },
+    "professionalExperience": {
+      "type": "array",
+      "title": "Professional Experience",
+      "items": {
+        "type": "object",
+        "properties": {
+          "jobTitle": { "type": "string" },
+          "companyName": { "type": "string" },
+          "location": { "type": "string", "description": "City, State" },
+          "startDate": { "type": "string", "format": "date" },
+          "endDate": { "type": ["string", "null"], "format": "date", "description": "YYYY-MM-DD or 'Present'" },
+          "responsibilitiesAndAchievements": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "keywords": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        },
+        "required": ["jobTitle", "companyName", "location", "startDate", "responsibilitiesAndAchievements"]
+      },
+      "default": [
+        {
+          "jobTitle": "AI Math Specialist",
+          "companyName": "Outlier AI",
+          "location": "Baton Rouge, Louisiana, United States",
+          "startDate": "2024-06",
+          "endDate": "Present",
+          "responsibilitiesAndAchievements": [
+            "Generated training data to improve model performance across various projects, ensuring alignment with discipline standards.",
+            "Conducted evaluations on AI model responses to refine accuracy, establishing a robust feedback loop for continual enhancement.",
+            "Facilitated user engagement through data-driven insights, significantly improving the relationship between users and their data."
+          ],
+          "keywords": ["AI", "Data Analysis", "Model Training", "User Engagement"]
+        },
+        {
+          "jobTitle": "Field Technician",
+          "companyName": "Tracerco",
+          "location": "Baton Rouge, Louisiana, United States",
+          "startDate": "2024-04",
+          "endDate": "2024-05",
+          "responsibilitiesAndAchievements": [
+            "Acted as a subject matter expert in scanning and instrumentation technologies, optimizing operational procedures for maximum efficiency.",
+            "Forged and maintained client partnerships leading to tailored solutions that enhanced productivity across diverse sectors."
+          ],
+          "keywords": ["Instrumentation", "Client Partnerships", "Operational Efficiency"]
+        },
+        {
+          "jobTitle": "Safety and Training Coordinator",
+          "companyName": "American Commercial Barge Line (ACBL)",
+          "location": "Harahan, Louisiana, United States",
+          "startDate": "2023-10",
+          "endDate": "2024-03",
+          "responsibilitiesAndAchievements": [
+            "Pioneered a proactive culture surrounding safety initiatives, resulting in improved compliance ratings and lower incident rates.",
+            "Designed and delivered engaging safety training programs, fostering a culture of safety awareness and engagement among employees.",
+            "Executed detailed risk assessments and strategic hazard mitigation plans, enhancing workplace safety across operational processes."
+          ],
+          "keywords": ["Safety", "Training", "Risk Assessment"]
+        },
+        {
+          "jobTitle": "Intern, Application Engineer",
+          "companyName": "Emerson Automation Solutions",
+          "location": "Baton Rouge, Louisiana, United States",
+          "startDate": "2022-06",
+          "endDate": "2022-08",
+          "responsibilitiesAndAchievements": [
+            "Implemented the AgileOps software suite on customer systems, optimizing operational workflows and enhancing efficiency.",
+            "Led initiative to automate Windows updates across 1200 virtual machines, streamlining enforcement of security measures and reducing manual labor.",
+            "Developed Excel macros to enhance user experience by refining usability, directly influencing operational efficiency in customer consultations."
+          ],
+          "keywords": ["AgileOps", "Automation", "Excel Macros"]
+        },
+        {
+          "jobTitle": "Intern, Project Development Engineer",
+          "companyName": "TotalEnergies",
+          "location": "Port Arthur, Texas, United States",
+          "startDate": "2021-06",
+          "endDate": "2021-08",
+          "responsibilitiesAndAchievements": [
+            "Directed pre-FEED planning to optimize processing capabilities within a condensate splitter unit, facilitating efficient project transitions into future phases.",
+            "Conducted extensive feasibility studies to enhance existing operational frameworks, ultimately improving equipment reliability and performance.",
+            "Modelled complex piping systems using industry-specific software, providing critical insights for engineering decisions."
+          ],
+          "keywords": ["Pre-FEED", "Feasibility Studies", "Piping Systems"]
+        }
+      ]
+    },
+    "education": {
+      "type": "array",
+      "title": "Education History",
+      "items": {
+        "type": "object",
+        "properties": {
+          "institutionName": { "type": "string" },
+          "location": { "type": "string", "description": "City, State" },
+          "degree": { "type": "string" },
+          "major": { "type": "string", "nullable": true },
+          "statusOrGraduationDate": { "type": "string", "description": "e.g., 'May 2023' or '131/139 Credits Completed'" },
+          "gpa": { "type": ["number", "null"] },
+          "relevantCoursework": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "courseCode": { "type": "string", "nullable": true },
+                "courseName": { "type": "string" },
+                "grade": { "type": "string", "nullable": true },
+                "notes": { "type": "string", "nullable": true }
+              },
+              "required": ["courseName"]
+            }
+          },
+          "academicHonors": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        },
+        "required": ["institutionName", "location", "degree", "statusOrGraduationDate"]
+      }
+    },
+    "certifications": {
+      "type": "array",
+      "title": "Certifications",
+      "items": {
+        "type": "object",
+        "properties": {
+          "certificationName": { "type": "string" },
+          "issuingOrganization": { "type": "string" },
+          "issueDate": { "type": "string", "description": "YYYY-MM or 'Expected YYYY-MM'" },
+          "expirationDate": { "type": ["string", "null"], "description": "YYYY-MM" },
+          "credentialId": { "type": ["string", "null"] },
+          "url": { "type": ["string", "null"], "format": "url" }
+        },
+        "required": ["certificationName", "issuingOrganization", "issueDate"]
+      }
+    },
+    "technicalSkills": {
+      "type": "object",
+      "title": "Technical Skills",
+      "properties": {
+        "itAndSystemsSupport": { "type": "array", "items": { "type": "string" } },
+        "softwareAndPlatforms": { "type": "array", "items": { "type": "string" } },
+        "dataAnalysisAndAI": { "type": "array", "items": { "type": "string" } },
+        "programmingAndDevelopment": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "skillName": { "type": "string" },
+              "proficiency": { "type": "string", "enum": ["Foundational", "Familiar", "Intermediate", "Proficient", "Expert"], "nullable": true }
+            },
+            "required": ["skillName"]
+          }
+        },
+        "engineeringSoftware": { "type": "array", "items": { "type": "string" } },
+        "productivityAndTools": { "type": "array", "items": { "type": "string" } },
+        "businessAndMarketing": { "type": "array", "items": { "type": "string" } },
+        "creativeSoftware": { "type": "array", "items": { "type": "string" } },
+        "otherTechnical": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "softSkillsAndAttributes": {
+      "type": "array",
+      "title": "Soft Skills & Key Attributes",
+      "items": {
+        "type": "object",
+        "properties": {
+          "skill": { "type": "string" },
+          "description": { "type": "string", "nullable": true },
+          "source": { "type": "string", "enum": ["InsightsDiscovery", "SelfAssessed", "ExperienceDerived"], "nullable": true }
+        },
+        "required": ["skill"]
+      }
+    },
+    "volunteerExperience": {
+      "type": "array",
+      "title": "Volunteer Experience",
+      "items": { "$ref": "#/properties/professionalExperience/items" }
+    },
+    "credentialsAndLicenses": {
+      "type": "array",
+      "title": "Credentials & Licenses",
+      "items": {
+        "type": "object",
+        "properties": {
+          "credentialName": { "type": "string" },
+          "issuingBody": { "type": "string" },
+          "issueYear": { "type": "string" },
+          "expirationYear": { "type": ["string", "null"] },
+          "details": { "type": ["string", "null"] }
+        },
+        "required": ["credentialName", "issuingBody", "issueYear"]
+      }
+    },
+    "membershipsAndAffiliations": {
+      "type": "array",
+      "title": "Memberships & Affiliations",
+      "items": {
+        "type": "object",
+        "properties": {
+          "organizationName": { "type": "string" },
+          "roleOrStatus": { "type": "string", "nullable": true },
+          "period": { "type": "string", "nullable": true }
+        },
+        "required": ["organizationName"]
+      }
+    },
+    "insightsDiscoveryProfile": {
+      "type": "object",
+      "title": "Insights Discovery Profile Summary",
+      "properties": {
+        "primaryType": { "type": "string", "default": "35: Reforming Observer (Classic)" },
+        "colorEnergiesConscious": {
+          "type": "object",
+          "properties": {
+            "blue": { "type": "number", "description": "Percentage or raw score" },
+            "red": { "type": "number" },
+            "green": { "type": "number" },
+            "yellow": { "type": "number" }
+          }
+        },
+         "colorEnergiesLessConscious": {
+          "type": "object",
+          "properties": {
+            "blue": { "type": "number", "description": "Percentage or raw score" },
+            "red": { "type": "number" },
+            "green": { "type": "number" },
+            "yellow": { "type": "number" }
+          }
+        },
+        "keyStrengths": { "type": "array", "items": { "type": "string" } },
+        "possibleWeaknesses": { "type": "array", "items": { "type": "string" } },
+        "communicationStyleNotes": { "type": "array", "items": { "type": "string" } },
+        "motivators": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "resumePreferencesAndNotes": {
+      "type": "object",
+      "title": "Resume Generation Preferences",
+      "properties": {
+        "targetLengthWordsMin": { "type": "integer", "default": 450 },
+        "targetLengthWordsMax": { "type": "integer", "default": 600 },
+        "targetPages": { "type": "integer", "default": 1, "description": "Preferred, but can go to 2 if necessary" },
+        "aiPersona": { "type": "string", "default": "Professional Resume Editor" },
+        "generalNotesForAI": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "metaInformation": {
+      "type": "object",
+      "title": "Meta Information",
+      "properties": {
+        "schemaVersion": { "type": "string", "default": "1.1.1" },
+        "lastUpdatedByAI": { "type": "string", "format": "date-time" },
+        "lastUpdatedByUser": { "type": ["string", "null"], "format": "date-time" }
+      }
+    }
+  },
+  "required": [
+    "personalInformation",
+    "professionalExperience",
+    "education",
+    "technicalSkills"
+  ]
+}
