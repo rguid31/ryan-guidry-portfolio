@@ -1,6 +1,7 @@
 // Moved to src/components/common/Navigation.js
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import ThemeToggleButton from './ThemeToggleButton'; // Import the toggle button
 
 const Navigation = () => {
     const router = useRouter();
@@ -36,6 +37,7 @@ const Navigation = () => {
                     <a href="/#portfolio" onClick={(e) => handleClick(e, '/#portfolio')}>Portfolio</a>
                     <a href="/blog" onClick={(e) => handleClick(e, '/blog')}>Blog</a>
                     <a href="/#contact" onClick={(e) => handleClick(e, '/#contact')}>Contact</a>
+                    <ThemeToggleButton /> {/* Add the toggle button here */}
                 </div>
             </div>
         </nav>

@@ -1,6 +1,7 @@
 import '../styles/globals.css'
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
+import { ThemeProvider } from '../contexts/ThemeContext';
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
@@ -32,9 +33,9 @@ function MyApp({ Component, pageProps }) {
   }, [router]);
 
   return (
-    <>
+    <ThemeProvider>
       <Component {...pageProps} />
-    </>
+    </ThemeProvider>
   )
 }
 
