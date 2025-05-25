@@ -9,6 +9,7 @@
     text-align: center;
     margin-bottom: 2rem;
     font-size: 2rem;
+    color: #333;
   }
   
   .tilesContainer {
@@ -31,11 +32,13 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    color: var(--text-color);
   }
   
   .expTile:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    background-color: var(--primary-color-light);
   }
   
   .logoContainer {

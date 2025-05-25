@@ -1,0 +1,10 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://ryanguidry.com
+
+# Sitemaps
+Sitemap: https://ryanguidry.com/sitemap.xml
+Sitemap: https://ryanguidry.com/server-sitemap.xml

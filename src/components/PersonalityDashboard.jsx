@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styles from './PersonalityDashboard.module.css';
+import styles from '../../styles/PersonalityDashboard.module.css';
 
 const PersonalityDashboard = () => {
   const [activeTab, setActiveTab] = useState('overview');
@@ -333,13 +333,13 @@ const PersonalityDashboard = () => {
             
             {/* Legend */}
             <g>
-              <rect x="250" y="120" width="130" height="100" rx="10" fill="white" stroke="#e0e0e0" strokeWidth="1" />
-              <text x="315" y="140" fontFamily="Arial" fontSize="14" fontWeight="bold" fill={colors.darkText} textAnchor="middle">Your Position:</text>
-              <text x="315" y="160" fontFamily="Arial" fontSize="12" fill={colors.darkText} textAnchor="middle">Reforming Observer</text>
-              <text x="275" y="185" fontFamily="Arial" fontSize="12" fill={colors.blue} textAnchor="start">Blue: 64%</text>
-              <text x="275" y="205" fontFamily="Arial" fontSize="12" fill={colors.red} textAnchor="start">Red: 60%</text>
-              <text x="350" y="185" fontFamily="Arial" fontSize="12" fill={colors.green} textAnchor="start">Green: 47%</text>
-              <text x="350" y="205" fontFamily="Arial" fontSize="12" fill={colors.yellow} textAnchor="start">Yellow: 43%</text>
+              <rect x="240" y="120" width="160" height="120" rx="10" fill="white" stroke="#e0e0e0" strokeWidth="1" />
+              <text x="320" y="140" fontFamily="Arial" fontSize="14" fontWeight="bold" fill={colors.darkText} textAnchor="middle">Your Position:</text>
+              <text x="320" y="160" fontFamily="Arial" fontSize="12" fill={colors.darkText} textAnchor="middle">Reforming Observer</text>
+              <text x="260" y="185" fontFamily="Arial" fontSize="12" fill={colors.blue} textAnchor="start">Blue: 64%</text>
+              <text x="260" y="205" fontFamily="Arial" fontSize="12" fill={colors.red} textAnchor="start">Red: 60%</text>
+              <text x="340" y="185" fontFamily="Arial" fontSize="12" fill={colors.green} textAnchor="start">Green: 47%</text>
+              <text x="340" y="205" fontFamily="Arial" fontSize="12" fill={colors.yellow} textAnchor="start">Yellow: 43%</text>
             </g>
           </svg>
         </div>

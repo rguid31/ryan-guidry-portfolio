@@ -1,7 +1,7 @@
 // Moved to src/components/common/KeywordCloudMap.jsx
 import React from 'react';
 import _ from 'lodash';
-import styles from './KeywordCloudMap.module.css'; // We'll create this file next
+import styles from '../styles/KeywordCloudMap.module.css'; // We'll create this file next
 
 const KeywordCloudMap = () => {
   // Define the main personality traits and their related keywords from the profile

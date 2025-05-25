@@ -16,7 +16,7 @@ const ExperienceTiles = () => {
           console.error('Professional experience data is missing from the API response.');
         }
       } catch (error) {
-        console.error('Error fetching profile data:', error);
+        console.error('Error fetching profile data:', error.message);
       }
     }
     fetchData();

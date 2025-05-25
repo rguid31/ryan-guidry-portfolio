@@ -1,0 +1,18 @@
+export default function handler(req, res) {
+    res.status(200).json({
+        professionalExperience: [
+            {
+                id: 1,
+                companyName: "Company A",
+                logo: "/path/to/logo.png",
+                jobTitle: "Job Title A",
+                startDate: "2020-01-01",
+                endDate: "2021-01-01",
+                location: "Location A",
+                responsibilitiesAndAchievements: ["Responsibility 1", "Responsibility 2"],
+                skills: ["Skill 1", "Skill 2"]
+            },
+            // Add more experience objects as needed
+        ]
+    });
+}

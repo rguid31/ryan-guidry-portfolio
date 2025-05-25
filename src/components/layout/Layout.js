@@ -18,6 +18,7 @@ const Layout = ({ children }) => {
                 <title>Ryan Guidry - Portfolio</title>
                 <meta name="description" content="Ryan Guidry's Portfolio" />
                 <link rel="icon" href="/favicon.ico" />
+                <link rel="stylesheet" href="/styles/globals.css" />
             </Head>
             
             {/* Cookiebot script */}
@@ -50,7 +51,6 @@ const Layout = ({ children }) => {
                             <span className="logo-text">Ryan Guidry</span>
                         </Link>
                         <div className="nav-links">
-                            <a href="/#about" onClick={(e) => handleNavigation(e, '/#about')}>About</a>
                             <Link href="/about">About Me</Link>
                             <a href="/#portfolio" onClick={(e) => handleNavigation(e, '/#portfolio')}>Portfolio</a>
                             <a href="/#experience" onClick={(e) => handleNavigation(e, '/#experience')}>Experience</a>
@@ -70,7 +70,7 @@ const Layout = ({ children }) => {
                 <div className="footer-content">
                     <div className="quick-links">
                         <a href="/#home" onClick={(e) => handleNavigation(e, '/#home')}>Home</a> |
-                        <a href="/#about" onClick={(e) => handleNavigation(e, '/#about')}>About</a> |
+                        <Link href="/about">About Me</Link> |
                         <a href="/#portfolio" onClick={(e) => handleNavigation(e, '/#portfolio')}>Portfolio</a> |
                         <Link href="/blog">Blog</Link> |
                         <a href="/#contact" onClick={(e) => handleNavigation(e, '/#contact')}>Contact</a>
