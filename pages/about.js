@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
-import Layout from '../src/components/layout/Layout';
+import Layout from '../src/components/Layout';
 import KeywordCloudMap from '../src/components/KeywordCloudMap';
 import PersonalityDashboard from '../src/components/PersonalityDashboard';
 import styles from '../src/styles/About.module.css';
@@ -156,7 +156,7 @@ export default function AboutPage() {
                     </div>
                     <div className={styles.storyContent}>
                         <p>I'm a Chemical Engineer with a passion for technology and innovation. My journey began in Louisiana, where I developed a strong foundation in analytical thinking and problem-solving. Through my diverse professional experiences, I've honed my skills in process optimization, data analysis, and technical leadership.</p>
-                        <p>My transition into AI and technology has been driven by my desire to leverage cutting-edge tools to solve complex problems. I combine my engineering background with modern technical skills to create innovative solutions that make a real impact.</p>
+                        <p>My transition into AI, data, and technology has been driven by my desire to leverage cutting-edge tools to solve complex problems. I combine my engineering background with modern technical skills to create innovative solutions that make a real impact.</p>
                     </div>
                 </section>
                 <section id="personality" className={styles.fullPersonalitySection}>

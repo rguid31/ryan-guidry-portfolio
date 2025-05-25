@@ -1,0 +1,144 @@
+.experienceDetail {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    min-height: 100vh;
+    background-color: var(--background-color);
+}
+
+.header {
+    margin-bottom: 3rem;
+}
+
+.backButton {
+    background: none;
+    border: none;
+    color: var(--primary-color);
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 0.5rem 0;
+    margin-bottom: 2rem;
+    transition: color 0.3s ease;
+}
+
+.backButton:hover {
+    color: var(--primary-color-dark);
+}
+
+.companyHeader {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.companyLogo {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+}
+
+.companyInfo h1 {
+    margin: 0;
+    font-size: 2rem;
+    color: var(--text-color);
+}
+
+.companyInfo h2 {
+    margin: 0.5rem 0;
+    font-size: 1.5rem;
+    color: var(--text-color-light);
+}
+
+.location, .date {
+    margin: 0.3rem 0;
+    color: var(--text-color-light);
+}
+
+.content {
+    display: grid;
+    gap: 3rem;
+}
+
+.description, .projects, .skills {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.description h3, .projects h3, .skills h3 {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    color: var(--text-color);
+    font-size: 1.5rem;
+}
+
+.description ul {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+}
+
+.description li {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+.projectGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.projectCard {
+    background-color: var(--background-color);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.projectCard:hover {
+    transform: translateY(-5px);
+}
+
+.projectImage {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.projectCard h4 {
+    margin: 1rem;
+    color: var(--text-color);
+    font-size: 1.2rem;
+}
+
+.projectCard p {
+    margin: 0 1rem 1rem;
+    color: var(--text-color-light);
+    line-height: 1.6;
+}
+
+.skillTags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+}
+
+.skillTag {
+    background-color: var(--primary-color-light);
+    color: var(--primary-color);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
+
+.skillTag:hover {
+    background-color: var(--primary-color);
+    color: white;
+} 

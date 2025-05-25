@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import styles from '../../styles/ContactForm.module.css';
+import styles from '../ContactForm.module.css';
 
 export default function ContactSection() {
     const [formData, setFormData] = useState({
@@ -234,4 +234,4 @@ export default function ContactSection() {
             </div>
         </section>
     );
-} 
+}

@@ -1,7 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
-import Link from 'next/link';
-import Layout from '../src/components/layout/Layout';
+import Layout from '../src/components/Layout';
 import HeroSection from '../src/components/sections/HeroSection';
 import AboutSection from '../src/components/sections/AboutSection';
 import EducationSection from '../src/components/sections/EducationSection';
@@ -18,10 +17,9 @@ export default function Home() {
         <Layout>
             <Head>
                 <title>Ryan Guidry - Portfolio 2025</title>
-                <meta name="description" content="Portfolio of Ryan Guidry - Data Analyst, Engineering, and Web Development" />
+                <meta name="description" content="Portfolio of Ryan Guidry - Data Analyst, Engineering Academic, and Software Developer in Progress" />
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             </Head>
-            
             <HeroSection />
             <AboutSection />
             <EducationSection />
@@ -30,7 +28,7 @@ export default function Home() {
             <ExperienceSection />
             <VolunteerSection />
             <SkillsSection />
-            {/* <PersonalityProfileSection /> */}
+            <PersonalityProfileSection />
             <ContactSection />
         </Layout>
    );

@@ -83,9 +83,9 @@ export const experienceItems = [
         ]
     },
     {
-        company: "Emerson",
+        company: "Emerson Automation Solutions",
         logo: "/images/work-logos/emerson.png",
-        title: "Engineering Intern",
+        title: "Intern, Application Engineer",
         location: "Baton Rouge, LA",
         date: "Jun 2022 - Aug 2022",
         description: [

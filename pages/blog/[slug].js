@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
-import Layout from '../../src/components/layout/Layout';
+import Layout from '../../src/components/Layout';
 import { getAllPostSlugs, getPostData } from '../../lib/posts';
 
 export async function getStaticPaths() {
