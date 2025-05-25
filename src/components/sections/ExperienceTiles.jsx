@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import styles from '../components/ExperienceTiles.module.css';
-import { fetchProfileData } from '../lib/api';
+import styles from './ExperienceTiles.module.css';
+import { fetchProfileData } from '../../lib/api';
 
 export default function ExperienceTiles() {
   const [experience, setExperience] = useState([]);
@@ -42,9 +42,9 @@ export default function ExperienceTiles() {
     <section className={styles.experienceTiles}>
       <h2>Professional Experience</h2>
       <div className={styles.tilesContainer}>
-        {experience.map((exp, index) => (
+        {experience.map((exp) => (
           <div 
-            key={index}
+            key={exp.id}
             className={styles.expTile}
             onClick={() => handleTileClick(exp.id)}
           >
@@ -59,8 +59,8 @@ export default function ExperienceTiles() {
       {activeExperience && (
         <div className={styles.overlay} onClick={handleOverlayClick}>
           <div className={styles.popup}>
-            {experience.filter(exp => exp.id === activeExperience).map((exp, index) => (
-              <div key={index} className={styles.popupContent}>
+            {experience.filter(exp => exp.id === activeExperience).map((exp) => (
+              <div key={exp.id} className={styles.popupContent}>
                 <button className={styles.closeButton} onClick={closePopup}>×</button>
                 <div className={styles.popupHeader}>
                   <div className={styles.popupLogoContainer}>
@@ -81,8 +81,8 @@ export default function ExperienceTiles() {
                   <div className={styles.skillsSection}>
                     <h4>Skills</h4>
                     <div className={styles.skills}>
-                      {exp.skills.map((skill, index) => (
-                        <span key={index} className={styles.skillTag}>{skill}</span>
+                      {exp.skills.map((skill, idx) => (
+                        <span key={idx} className={styles.skillTag}>{skill}</span>
                       ))}
                     </div>
                   </div>

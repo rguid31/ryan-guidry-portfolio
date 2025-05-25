@@ -83,7 +83,7 @@ const Layout = ({ children }) => {
                         <a href="https://medium.com/@guidry_ryan" target="_blank" rel="noopener noreferrer">Medium</a>
                     </div>
                     
-                    <p>&copy; 2024 Ryan Guidry. All Rights Reserved.</p>
+                    <p>&copy; 2025 Ryan Guidry. All Rights Reserved.</p>
                 </div>
             </footer>
         </>

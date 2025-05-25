@@ -1,0 +1,24 @@
+.heroSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 0;
+    margin-bottom: 4rem;
+    background: linear-gradient(to right, var(--background-color), var(--primary-color-light));
+    border-radius: 15px;
+    text-align: center;
+}
+
+.title {
+    margin-bottom: 1rem;
+    font-size: 3rem;
+    color: var(--text-color);
+}
+
+.subtitle {
+    margin: 0 auto;
+    max-width: 800px;
+    font-size: 1.5rem;
+    color: var(--text-color-light);
+}

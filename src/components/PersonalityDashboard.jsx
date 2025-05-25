@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from 'components/PersonalityDashboard.module.css';
+import styles from 'src/components/common/PersonalityDashboard.module.css';
 
 const PersonalityDashboard = () => {
   return (

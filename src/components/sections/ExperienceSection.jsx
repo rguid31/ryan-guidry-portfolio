@@ -1,7 +1,7 @@
 import React from 'react';
 import { useRouter } from 'next/router';
-import styles from '../ExperienceSection.module.css';
-import ExperienceTiles from '../ExperienceTiles';
+import styles from './ExperienceSection.module.css';
+import ExperienceTiles from './ExperienceTiles';
 import { experienceItems } from '../../data/experienceData';
 
 export default function ExperienceSection() {

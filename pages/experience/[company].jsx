@@ -1,11 +1,19 @@
 import React from 'react';
+import { useRouter } from 'next/router';
 import styles from '../../../styles/ExperienceDetail.module.css';
-import { experienceItems } from '../../data/experienceData';
+import { experienceItems } from '../../src/data/experienceData';
+// If this path is incorrect, try: import { experienceItems } from '../../data/experienceData';
 
 export default function ExperienceDetail() {
-    // Find the Outlier experience by slug
+    const router = useRouter();
+    const { company } = router.query;
+
+    // Defensive: Wait for router to be ready
+    if (!company) return null;
+
+    // Find the experience by slug (case-insensitive, hyphenated)
     const experience = experienceItems.find(
-        item => item.company.toLowerCase().replace(/\s+/g, '-') === 'ACBL'
+        item => item.company.toLowerCase().replace(/\s+/g, '-') === company.toLowerCase()
     );
 
     if (!experience) {

@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 import Layout from '../src/components/Layout';
-import KeywordCloudMap from '../src/components/KeywordCloudMap';
+import KeywordCloudMap from '../src/components/common/KeywordCloudMap';
 import PersonalityDashboard from '../src/components/PersonalityDashboard';
 import styles from '../src/styles/About.module.css';
 
