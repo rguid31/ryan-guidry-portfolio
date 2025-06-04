@@ -1,0 +1,63 @@
+.certificationsSection {
+    /* Potential padding if #certifications from index.css is removed */
+    /* padding: 4rem 2rem; */
+    /* background-color: var(--color-background-light); */
+}
+.certificationsContainer {
+    max-width: 900px; /* Example */
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem; /* Space between rows */
+}
+.certRow {
+    display: flex;
+    gap: 2rem;
+    justify-content: space-around; /* Example */
+}
+.reversed {
+    flex-direction: row-reverse; /* Example */
+}
+.certificationItem {
+    background-color: var(--color-background-body);
+    padding: 1.5rem;
+    border: 1px solid var(--color-border-light);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px var(--color-shadow-main);
+    flex: 1; /* Allow items to grow */
+    min-width: 300px; /* Prevent items from becoming too small */
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.certImageContainer {
+    font-size: 2rem; /* For icon */
+    color: var(--color-primary);
+}
+.certificationIcon {
+    /* Specific icon styles if needed */
+}
+.certDetails h4 {
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+    font-family: var(--font-family-headings);
+}
+.certDetails p {
+    color: var(--color-text-secondary);
+    font-size: 0.9rem;
+    font-family: var(--font-family-base);
+}
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .certRow {
+        flex-direction: column;
+        align-items: center;
+    }
+    .reversed {
+         flex-direction: column; /* Maintain column for reversed on mobile */
+    }
+    .certificationItem {
+        width: 100%;
+        max-width: 400px; /* Max width for items on mobile */
+    }
+}

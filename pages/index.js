@@ -10,7 +10,6 @@ import ExperienceSection from '../src/components/sections/ExperienceSection';
 import VolunteerSection from '../src/components/sections/VolunteerSection';
 import SkillsSection from '../src/components/sections/SkillsSection';
 import ContactSection from '../src/components/sections/ContactSection';
-import PersonalityProfileSection from '../src/components/sections/PersonalityProfileSection';
 
 export default function Home() {
     return (
@@ -28,7 +27,6 @@ export default function Home() {
             <ExperienceSection />
             <VolunteerSection />
             <SkillsSection />
-            <PersonalityProfileSection />
             <ContactSection />
         </Layout>
    );

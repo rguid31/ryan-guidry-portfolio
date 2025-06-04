@@ -1,14 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@400;500;700&display=swap');
 
 :root {
-    --background-color: #ffffff;
-    --background-color-light: #f5f5f5;
-    --primary-color: #0070f3;
-    --primary-color-light: #e6f0ff;
-    --primary-color-dark: #0051a2;
-    --text-color: #333333;
-    --text-color-light: #666666;
-    --text-color-secondary: #666666;
+    /* New color variables */
+    --color-primary: #14213D; /* Oxford Blue */
+    --color-secondary: #FCA311; /* Orange Web */
+    --color-text-primary: #333333; /* Dark gray, good default */
+    --color-text-secondary: #555555; /* Slightly lighter gray */
+    --color-background-body: #FFFFFF; /* White */
+    --color-background-light: #f5f5f5; /* Light gray for sections/cards */
+    --color-background-dark: #E5E5E5; /* Slightly darker gray, from old --gray */
+    --color-border-light: #E5E5E5;
+    --color-shadow-main: rgba(20, 33, 61, 0.1);
+
+    /* Font variables */
+    --font-family-base: 'Roboto Flex', 'Arial', sans-serif;
+    --font-family-headings: 'Roboto Flex', 'Arial', sans-serif; /* can be same or different */
 }
 
 /* Reset and base styles */
@@ -19,16 +25,16 @@
 }
 
 html, body {
-    font-family: 'Roboto Flex', 'Arial', sans-serif;
+    font-family: var(--font-family-base);
     line-height: 1.6;
-    color: var(--text-color);
-    background-color: var(--background-color);
+    color: var(--color-text-primary);
+    background-color: var(--color-background-body);
     scroll-behavior: smooth;
 }
 
 /* Link styles */
 a {
-    color: #0070f3;
+    color: var(--color-primary);
     text-decoration: none;
 }
 
@@ -52,14 +58,15 @@ button {
 /* Responsive typography */
 h1, h2, h3, h4, h5, h6 {
     margin-bottom: 1rem;
-    color: var(--text-color);
+    color: var(--color-text-primary);
     line-height: 1.2;
+    font-family: var(--font-family-headings);
 }
 
 h1 {
     font-size: 2.8rem;
     font-weight: 700;
-    color: var(--text-color);
+    color: var(--color-text-primary);
     margin-bottom: 0.5rem;
 }
 
@@ -68,9 +75,9 @@ h2 {
     font-weight: 700;
     margin-top: 2rem;
     margin-bottom: 1.5rem;
-    border-bottom: 2px solid var(--primary-color-light);
+    border-bottom: 2px solid var(--color-secondary);
     padding-bottom: 0.5rem;
-    color: var(--primary-color);
+    color: var(--color-primary);
 }
 
 h3 {
@@ -78,24 +85,24 @@ h3 {
     font-weight: 600;
     margin-top: 1.5rem;
     margin-bottom: 1rem;
-    color: var(--text-color-dark);
+    color: var(--color-text-primary); /* Changed from --text-color-dark */
 }
 
 p {
     margin-bottom: 1rem;
-    color: var(--text-color);
+    color: var(--color-text-secondary); /* Changed from --text-color */
 }
 
 .hero-subtitle {
     font-size: 1.5rem;
-    color: var(--text-color);
+    color: var(--color-text-primary); /* Changed from --text-color */
     margin-bottom: 0.5rem;
     font-weight: 500;
 }
 
 .hero-description {
     font-size: 1.1rem;
-    color: var(--text-color-light);
+    color: var(--color-text-secondary); /* Changed from --text-color-light */
     max-width: 800px;
     margin: 0.5rem auto 1.5rem auto;
     line-height: 1.7;
@@ -109,14 +116,14 @@ ul {
 
 li {
     margin-bottom: 0.5rem;
-    color: var(--text-color);
+    color: var(--color-text-secondary); /* Changed from --text-color */
     position: relative;
     padding-left: 1.2em;
 }
 
 li::before {
     content: "•";
-    color: var(--primary-color);
+    color: var(--color-primary);
     position: absolute;
     left: 0;
 }
@@ -134,8 +141,8 @@ nav {
     top: 0;
     left: 0;
     right: 0;
-    background: var(--background-color);
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    background: var(--color-background-body); /* Changed from --background-color */
+    box-shadow: 0 2px 10px var(--color-shadow-main); /* Changed from rgba(0,0,0,0.1) */
     z-index: 1000;
 }
 
@@ -150,7 +157,7 @@ nav {
 
 .logo {
     text-decoration: none;
-    color: var(--text-color);
+    color: var(--color-text-primary); /* Changed from --text-color */
     font-size: 1.5rem;
     font-weight: bold;
     display: flex;
@@ -175,14 +182,14 @@ nav {
 
 .nav-links a {
     text-decoration: none;
-    color: var(--text-color);
+    color: var(--color-text-primary); /* Changed from --text-color */
     font-weight: 500;
     transition: color 0.3s ease;
     padding: 0.5rem 1rem;
 }
 
 .nav-links a:hover {
-    color: var(--primary-color);
+    color: var(--color-primary);
 }
 
 /* Main content */
@@ -205,7 +212,7 @@ main, section:first-of-type {
 
 /* Footer */
 footer {
-    background-color: var(--background-color-light);
+    background-color: var(--color-background-light); /* Changed from --background-color-light */
     padding: 2rem 0;
     margin-top: 4rem;
 }
@@ -222,13 +229,13 @@ footer {
 }
 
 .quick-links a {
-    color: var(--text-color);
+    color: var(--color-text-primary); /* Changed from --text-color */
     text-decoration: none;
     margin: 0 0.5rem;
 }
 
 .quick-links a:hover {
-    color: var(--primary-color);
+    color: var(--color-primary);
 }
 
 .social-icons {
@@ -239,13 +246,13 @@ footer {
 }
 
 .social-icons a {
-    color: var(--text-color);
+    color: var(--color-text-primary); /* Changed from --text-color */
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .social-icons a:hover {
-    color: var(--primary-color);
+    color: var(--color-primary);
 }
 
 /* About Page Styles */
@@ -259,19 +266,19 @@ footer {
     text-align: center;
     margin-bottom: 4rem;
     padding: 4rem 0;
-    background: linear-gradient(to right, var(--background-color), var(--primary-color-light));
+    background: linear-gradient(to right, var(--color-background-body), var(--color-background-light)); /* Updated gradient */
     border-radius: 15px;
 }
 
 .heroSection h1 {
     font-size: 3rem;
-    color: var(--text-color);
+    color: var(--color-primary); /* Changed from --text-color */
     margin-bottom: 1rem;
 }
 
 .subtitle {
     font-size: 1.5rem;
-    color: var(--text-color-light);
+    color: var(--color-text-secondary); /* Changed from --text-color-light */
     max-width: 800px;
     margin: 0 auto;
 }
@@ -282,7 +289,7 @@ footer {
 
 .storySection h2 {
     font-size: 2.5rem;
-    color: var(--text-color);
+    color: var(--color-primary); /* Changed from --text-color */
     margin-bottom: 2rem;
     text-align: center;
 }
@@ -296,19 +303,19 @@ footer {
 .storyContent p {
     margin-bottom: 1.5rem;
     font-size: 1.1rem;
-    color: var(--text-color);
+    color: var(--color-text-secondary); /* Changed from --text-color */
 }
 
 .valuesSection {
     margin-bottom: 4rem;
     padding: 3rem 0;
-    background-color: var(--background-color-light);
+    background-color: var(--color-background-light); /* Changed from --background-color-light */
     border-radius: 15px;
 }
 
 .valuesSection h2 {
     font-size: 2.5rem;
-    color: var(--text-color);
+    color: var(--color-primary); /* Changed from --text-color */
     margin-bottom: 2rem;
     text-align: center;
 }
@@ -321,10 +328,10 @@ footer {
 }
 
 .valueCard {
-    background: white;
+    background: var(--color-background-body); /* Changed from white */
     padding: 2rem;
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px var(--color-shadow-main); /* Changed from rgba(0,0,0,0.1) */
     transition: transform 0.3s ease;
 }
 
@@ -333,7 +340,7 @@ footer {
 }
 
 .valueCard h3 {
-    color: var(--primary-color);
+    color: var(--color-secondary); /* Changed from --primary-color */
     margin-bottom: 1rem;
     font-size: 1.5rem;
 }
@@ -388,11 +395,11 @@ footer {
 
 .myGlobalClass {
     padding: 20px;
-    border: 1px solid var(--primary-color);
+    border: 1px solid var(--color-primary);
 }
 
 a.portfolio-link {
-    color: var(--primary-color);
+    color: var(--color-primary);
     text-decoration: none;
     font-weight: 500;
     margin-top: 1rem;
