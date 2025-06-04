@@ -1,3 +1,90 @@
+/* Homepage About Section Preview Styles */
+.hpAboutSection {
+    padding: 6rem 2rem; /* Adjusted padding */
+    background: var(--color-background-body);
+}
+
+.hpAboutLayout { /* Corresponds to old .about-section for layout */
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem; /* Added gap for spacing */
+    max-width: 1200px; /* Ensure content width is controlled */
+    margin: 0 auto; /* Center layout */
+}
+
+.hpProfileContainer { /* Corresponds to old .profile-container */
+    flex: 1;
+    max-width: 40%; /* Adjusted max-width */
+    position: relative;
+}
+
+.hpProfileImage { /* Corresponds to old .hero-image */
+    width: 100%;
+    height: auto;
+    border-radius: 10px; /* Softened border radius */
+    object-fit: cover;
+    display: block;
+    box-shadow: 0 4px 12px var(--color-shadow-main);
+}
+
+.hpAboutText { /* Corresponds to old .about-text */
+    flex: 2; /* Give more space to text */
+    padding: 0 1rem; /* Reduced padding as layout handles overall padding */
+    font-size: 1.1rem;
+    line-height: 1.7; /* Increased line height for readability */
+    color: var(--color-text-secondary);
+}
+
+.hpAboutText p {
+    margin-bottom: 1.5rem;
+    font-family: var(--font-family-base);
+}
+
+.hpBioText { /* Corresponds to old .about-text .bio */
+    font-size: 1.25rem;
+    color: var(--color-text-primary); /* Changed from --primary to --color-text-primary */
+    font-weight: 500;
+    font-family: var(--font-family-headings); /* Using heading font for bio */
+    margin-bottom: 1.5rem; /* Ensure consistent spacing */
+}
+
+.hpAboutMoreLink {
+    display: inline-block;
+    margin-top: 1rem;
+    color: var(--color-primary);
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.hpAboutMoreLink:hover {
+    color: var(--color-secondary);
+    text-decoration: underline;
+}
+
+.hpAboutMoreLink i {
+    margin-left: 0.5rem;
+}
+
+/* Responsive adjustments for Homepage About Section */
+@media (max-width: 768px) {
+    .hpAboutLayout {
+        flex-direction: column;
+        align-items: center; /* Center items when stacked */
+    }
+
+    .hpProfileContainer {
+        max-width: 70%; /* Allow image to be a bit larger on mobile */
+        margin-bottom: 2rem;
+    }
+
+    .hpAboutText {
+        flex: 1; /* Take full width when stacked */
+        text-align: center; /* Center text on mobile */
+    }
+}
+
+/* Styles for the dedicated /about page (existing styles) */
 .aboutContainer {
     max-width: 1200px;
     margin: 0 auto;

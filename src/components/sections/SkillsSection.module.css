@@ -1,0 +1,191 @@
+/* Skills Section Container */
+.skillsSectionContainer { /* Corresponds to #skills */
+    padding: 6rem 2rem; /* Adjusted padding */
+    background: var(--color-background-light);
+}
+
+/* Grid for Skill Cards */
+.skillsGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem; /* Adjusted padding */
+}
+
+/* Individual Skill Card */
+.skillCard {
+    background: var(--color-background-body);
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 4px 8px var(--color-shadow-main); /* Updated shadow */
+    border: 1px solid var(--color-border-light);
+    transition: all 0.3s ease;
+}
+
+.skillCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px var(--color-shadow-main); /* Updated shadow */
+    border-color: var(--color-secondary);
+}
+
+/* Icon inside Skill Card */
+.skillCard i {
+    font-size: 2rem;
+    color: var(--color-secondary);
+    margin-bottom: 1rem;
+    display: block;
+    text-align: center; /* Centering icon */
+}
+
+/* Title inside Skill Card */
+.skillCard h3 {
+    color: var(--color-primary);
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    text-align: center; /* Centering title */
+    font-family: var(--font-family-headings);
+}
+
+/* List of skills within a card */
+.skillsList {
+    display: grid; /* Changed to grid for potentially better alignment if needed */
+    gap: 0.75rem; /* Adjusted gap */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Individual skill item in the list */
+.skillsList li { /* This is also used as .skillItem in some JSX, ensure consistency or map if different */
+    padding: 0.75rem 1.2rem; /* Adjusted padding */
+    background: var(--color-background-dark); /* Using a slightly darker background */
+    color: var(--color-text-primary);
+    border-radius: 20px; /* More rounded appearance */
+    font-size: 0.95rem; /* Slightly larger font */
+    border: 1px solid var(--color-border-light);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-family: var(--font-family-base);
+}
+
+.skillsList li:hover {
+    background: var(--color-background-body);
+    border-color: var(--color-secondary);
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px var(--color-shadow-main);
+}
+
+/* Icon for individual skill item */
+.skillsList li i { /* This specific selector might not be used if icons are part of text or handled differently */
+    margin-right: 8px; /* Adjusted margin */
+    width: 18px; /* Adjusted width */
+    text-align: center;
+    color: var(--color-primary); /* Consistent with text color or make it --color-secondary */
+    font-size: 1em; /* Reset icon size relative to text */
+    margin-bottom: 0; /* Reset margin from .skillCard i */
+    display: inline; /* Reset display from .skillCard i */
+}
+
+/* Text span for individual skill item */
+.skillsList li span { /* This specific selector might not be used if text is direct child */
+    flex-grow: 1;
+}
+
+/* Skill items with animations (if these specific classes are used in JSX) */
+.skillItemAnimated { /* Renamed from .skill-item to avoid conflict if reused */
+    position: relative;
+    padding: 15px 20px;
+    margin: 10px 0;
+    background: var(--color-background-light); /* Adjusted background */
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    animation: slideIn 0.5s ease forwards;
+    opacity: 0; /* Initial state for animation */
+}
+
+@keyframes slideIn {
+    from { transform: translateX(20px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+.skillIcon { /* For specific icon styling if .skillsList li i is not enough */
+    margin-right: 12px;
+    color: var(--color-secondary); /* Using secondary color for emphasis */
+    width: 25px;
+    text-align: center;
+}
+
+.proficiencyDots {
+    display: flex;
+    gap: 5px;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--color-border-light); /* Using a theme color */
+}
+
+.dot.active { /* Ensure .active class is applied in JSX for this to work */
+    background: var(--color-secondary);
+}
+
+.skillProgress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    background: var(--color-secondary);
+    width: var(--progress); /* This CSS variable would need to be set inline in JSX */
+    transition: width 0.5s ease;
+}
+
+.skillItemAnimated:hover { /* Renamed from .skill-item:hover */
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px var(--color-shadow-main);
+}
+
+.skillBadge, .projectCount { /* Assuming these are used as separate classes in JSX */
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--color-secondary);
+    color: var(--color-background-body); /* Text on badge */
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 0.8em;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) { /* Specific breakpoint from original */
+    .skillsGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .skillsGrid {
+        grid-template-columns: 1fr;
+    }
+    .skillCard {
+        padding: 1.5rem;
+    }
+    .skillCard h3 {
+        font-size: 1.3rem;
+    }
+    .skillsList li {
+        font-size: 0.9rem;
+        padding: 0.6rem 1rem;
+    }
+}
